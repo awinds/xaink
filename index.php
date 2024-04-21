@@ -20,7 +20,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <!-- 列表 -->
         <div id="main-center" class="flex-1 mx-1 md:mr-12 md:ml-32">
             <!-- 统计和说明 -->
-            <div class="xa-statistics flex items-center justify-between pb-2">
+            <div class="xa-statistics flex items-center justify-between pb-2 mt-2 md:pt-0">
                 <div class="flex items-center">
                     <?php
                     if($this->is('index')) {

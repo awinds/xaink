@@ -9,10 +9,9 @@
         <!-- 列表 -->
         <div id="main-center" class="flex-1 mx-1 md:mr-12 md:ml-32">
             <!-- 统计和说明 -->
-            <div class="xa-statistics flex items-center justify-between pb-2">
+            <div class="xa-statistics flex items-center justify-between pb-2 mt-2 md:pt-0">
                 <div class="flex items-center">
                     <?php
-                    //$archive = $this->widget('Widget_Archive');
                     if($this->is('category')){
                         echo "分类<span class='mx-2 font-bold'>".$this->pageRow['name'] ." </span>下共有文章". $this->pageRow['count'] ."篇";
                     }

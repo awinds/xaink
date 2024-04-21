@@ -59,7 +59,10 @@ function xaGetLikeExistAndNum($cid)
             "num"=>0
         ];
     }else{
-        $cids = Json::decode($cookie, true);
+        $cids = [];
+        if($cookie) {
+            $cids = Json::decode($cookie, true);
+        }
         if($exist['int_value'] > 0) {
             return [
                 "exist" => $cids[$cid] ? true : false,

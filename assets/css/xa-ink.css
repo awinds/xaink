@@ -138,10 +138,6 @@ header.dark {
     color: rgb(156,163,175);
 }
 
-header .xa-search input {
-    width: 590px;
-}
-
 header .xa-search button {
     width: 110px;
 }
@@ -180,7 +176,7 @@ aside.dark ul li {
 
 footer {
     background-color: #f5f6f5;
-    height: 42px;
+    min-height: 42px;
 }
 
 footer.dark {

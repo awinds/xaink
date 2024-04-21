@@ -156,4 +156,13 @@ function themeConfig($form)
         _t("默认关闭")
     );
     $form->addInput($enablePostCopyright);
+
+    $siteFooterHtml = new \Typecho\Widget\Helper\Form\Element\Textarea(
+        'siteFooterHtml',
+        null,
+        null,
+        _t('底部自定义html'),
+        _t('底部自定义html')
+    );
+    $form->addInput($siteFooterHtml);
 }

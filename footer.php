@@ -7,15 +7,18 @@
 
 <!-- 页脚 -->
 <footer id="footer" class="flex items-center">
-    <div class="xa-footer mx-auto w-full flex justify-center items-center flex-col text-gray-400 dark:bg-gray-900 dark:border-gray-600 md:justify-start md:flex-row md:pl-32">
-        <div class="space-x-2">
-            <span>© <?php echo date("Y", time());?> <?php $this->options->title(); ?></span>
-            <span>Theme by <a href="https://xiaoa.me">XiaoA</a></span>
-        </div>
-        <div class="px-2">
+    <div class="xa-footer mx-auto w-full flex justify-center flex-col md:flex-row items-center text-gray-400 dark:bg-gray-900 dark:border-gray-600 md:justify-between md:flex md:px-32">
+        <div class="space-x-2 flex flex-col justify-center items-center md:flex-row md:justify-start">
+            <span>© <?php echo date("Y", time());?> <?php $this->options->title(); ?>.</span>
             <?php if($this->options->siteBeiAn): ?>
             <span><a rel="external nofollow" target="_blank" href="https://beian.miit.gov.cn/"><?php $this->options->siteBeiAn(); ?></a></span>
             <?php endif ?>
+            <?php if($this->options->siteFooterHtml): ?>
+            <span><?php $this->options->siteFooterHtml(); ?></span>
+            <?php endif ?>
+        </div>
+        <div class="px-2">
+            <span>Powered by <a href="http://typecho.org" rel="external nofollow" target="_blank">Typecho</a>. Theme by <a rel="external nofollow" href="https://xiaoa.me">XiaoA</a></span>
         </div>
     </div>
 </footer>

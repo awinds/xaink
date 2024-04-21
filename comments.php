@@ -86,8 +86,8 @@ function threadedComments($comments, $options)
                 <?php $security = $this->widget("Widget_Security"); ?>
                 <input type="hidden" name="_" value="<?php echo $security->getToken($this->request->getReferer()); ?>" />
                 <span class="flex justify-between items-center px-2 space-x-2 py-1">
-                    <div id="OwO" class="xa-theme OwO w-96"></div>
-                    <div>
+                   <div id="OwO" class="xa-theme OwO flex-1 w-full"></div>
+                    <div class="w-16">
                         <button type="submit" id="commentSubmit" class="px-4 py-1 bg-blue-500 text-white rounded-2xl hover:bg-blue-600 focus:outline-none">发表</button>
                     </div>
                 </span>

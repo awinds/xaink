@@ -21,7 +21,8 @@ Demo:[https://www.xa.ink][2]
  - CodeHighlighter插件，可高亮代码
  - Sticky插件，可置顶文章，需做以下修改配合 
 > ```php
-> $sticky_post['istop'] = 1;//增加字段,外面可以自定义判断
+> //增加字段,外面可以自定义判断
+> $sticky_post['istop'] = 1;
 > ```
 # 安装 
 直接下载 zip 源码->解压后移动到 `Typecho` 主题目录->改名为`xaink`->启用。 

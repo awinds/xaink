@@ -82,7 +82,7 @@ if (isset($_POST['action'])
                 <div class="xa-space-line"></div>
             </div>
             <!-- 评论 -->
-            <?php $this->need('comments.php'); ?>
+           <?php $this->need('comments.php'); ?>
         </div>
         <!-- 右侧栏 -->
         <?php $this->need('sidebar.php'); ?>
