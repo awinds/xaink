@@ -35,6 +35,7 @@ Demo:[https://www.xa.ink][2]
  - 使用[JQuery](https://jquery.com/)和相关插件 
  - 使用[jr-qrcode](https://github.com/diamont1001/jrQrcode)生成二维码 
  - 使用[OwO](https://github.com/DIYgod/OwO)表情 
+ - 使用[tabler](https://tabler.io/)图标
  
 # License 
  - Open sourced under the MIT license. 
