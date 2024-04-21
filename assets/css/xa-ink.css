@@ -1,0 +1,674 @@
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+}
+
+.xa-button.dark  {
+    background-color: #4b4b50;
+    color: rgb(156,163,175);
+}
+
+.xa-button.dark:hover  {
+    background-color: rgb(82,82,82);
+    color:  #f5f6f5;
+}
+
+.xa-link:hover {
+    color: rgb(49,94,251);
+    text-decoration: underline;
+}
+
+.xa-link.dark:hover {
+    color: rgb(229,229,229);
+}
+
+.OwO .OwO-logo {
+    line-height: 28px;
+    padding:2px 5px;
+    height: 28px;
+}
+
+.OwO.dark .OwO-logo {
+    background-color: #4b4b50;
+    color: rgb(156,163,175);
+    border: 1px solid #4b4b50;
+}
+
+.OwO .OwO-body {
+    top : 27px;
+}
+
+.OwO.dark .OwO-body {
+    border-color: #4b4b50;
+    background-color: #4b4b50;
+    color: rgb(156,163,175);
+}
+.OwO .OwO-body .OwO-items {
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+/* Webkit内核浏览器 */
+.OwO .OwO-body .OwO-items::-webkit-scrollbar {
+    width: 2px; /* 滚动条宽度 */
+    height: 2px; /* 滚动条高度（对于垂直滚动条） */
+}
+
+.OwO .OwO-body .OwO-items::-webkit-scrollbar-thumb {
+    background: rgb(156,163,175); /* 滚动条滑块（thumb）的颜色 */
+    border-radius: 1px; /* 可选，圆角 */
+}
+
+.OwO .OwO-body .OwO-items::-webkit-scrollbar-track {
+    background: #fff; /* 滚动条轨道背景颜色 */
+    border-radius: 1px; /* 可选，轨道的圆角 */
+}
+
+.OwO.dark .OwO-body .OwO-items::-webkit-scrollbar-thumb {
+    background: rgb(10,12,25); /* 滚动条滑块（thumb）的颜色 */
+    border-radius: 1px; /* 可选，圆角 */
+}
+
+.OwO.dark .OwO-body .OwO-items::-webkit-scrollbar-track {
+    background: rgb(75,85,99); /* 滚动条轨道背景颜色 */
+    border-radius: 1px; /* 可选，轨道的圆角 */
+}
+
+.OwO.dark .OwO-body .OwO-items .OwO-item {
+    background-color: rgb(75,85,99);
+    color: #f5f6f5;
+}
+
+.OwO.dark .OwO-bar {
+    background-color: #4b4b50;
+    border-top: 1px solid rgb(75,85,99);
+    color: rgb(156,163,175);
+}
+
+.OwO.dark .OwO-body .OwO-bar li:hover {
+    background-color: rgb(75,85,99);
+    color: #f5f6f5;
+}
+
+.OwO.dark .OwO-body .OwO-bar .OwO-packages .OwO-package-active {
+    background-color: rgb(75,85,99);
+    color: #f5f6f5;
+}
+
+body {
+    font-size: 10pt;
+    color: rgb(75,85,99);
+}
+
+body.dark {
+    background-color: rgb(10,12,25);
+    color: rgb(156,163,175);
+}
+
+body .ti {
+    font-size: 12pt;
+}
+
+header {
+    height: 70px;
+    background-color: #fff;
+}
+
+header.dark {
+    background-color: #0d1117;
+    border-bottom: 1px rgb(82,82,82) solid;
+    color: rgb(156,163,175);
+}
+
+header .xa-search input {
+    width: 590px;
+}
+
+header .xa-search button {
+    width: 110px;
+}
+
+header form {
+    font-size: 12pt;
+}
+
+main {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    min-height: calc(100vh - 75px);
+    max-width: 1340px;
+}
+
+main.dark {
+    background-color: rgb(10,12,25);
+    color: rgb(156,163,175);
+}
+
+aside {
+    background-color: rgb(229,231,235);
+}
+
+aside.dark {
+    background-color: rgb(31,41,55);
+}
+
+aside ul li {
+    background-color: rgb(249,250,251);
+}
+
+aside.dark ul li {
+    background-color: rgb(75,85,99);
+}
+
+footer {
+    background-color: #f5f6f5;
+    height: 42px;
+}
+
+footer.dark {
+    background-color: rgb(31,41,55);
+}
+
+button.dark {
+    background-color: #4b4b50;
+    color: rgb(156,163,175);
+    border-width: 0px;
+}
+
+button.dark:hover {
+    background-color: rgb(82,82,82);
+    color:  #f5f6f5;
+}
+
+input.dark {
+    background-color: #6c6c72;
+    border-color: #4b4b50;
+}
+
+#pager {
+    background-color: #f5f6f5;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+#pager.dark {
+    background-color:rgb(31,41,55);
+}
+
+input.text {
+
+}
+
+h1 {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+h3 {
+
+}
+
+/* 右下角按钮样式 */
+.xa-fixed-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.xa-space-line {
+    padding-top: 30px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.xa-count-tip {
+    padding: 4px 8px;
+    background-color: rgb(59,130,246);
+    color: #fff;
+    border-radius: 12px;
+    margin-left: 2px;
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.xa-count-tip.dark {
+    background-color: rgb(82,82,82);
+    color:  #f5f6f5;
+}
+
+.xa-link-line::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    height: 1px;
+    background-color: rgb(59,130,246);
+    width: 16px;
+}
+
+.xa-link-line.dark::before {
+    background-color: rgb(82,82,82);
+}
+
+.xa-link-circle::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -7px; /* 调整圆圈的位置 */
+    top: calc(50% - 5px); /* 将圆圈定位到文本的中间 */
+    width: 10px; /* 圆圈的直径 */
+    height: 10px; /* 圆圈的直径 */
+    border-radius: 50%; /* 将方块转换为圆形 */
+    background-color: rgb(59,130,246); /* 圆圈的颜色 */
+}
+
+.xa-link-circle.dark::before {
+    background-color: rgb(82,82,82);
+}
+
+.xa-header {
+    width: 1340px;
+}
+
+.xa-logo {
+    width: 130px;
+}
+
+.xa-logo img {
+    width: 102px;
+}
+
+.xa-login-menu.dark {
+    background-color: rgb(31,41,55);
+}
+
+.xa-login-menu a {
+    color: #4b4b50;
+}
+
+.xa-login-menu a.dark {
+    color: rgb(156,163,175);
+}
+
+.xa-login-menu a:hover {
+    background-color: rgb(156,163,175);
+    color: rgb(243,244,246);
+    text-decoration: none;
+}
+
+.xa-login-menu a.dark:hover {
+    background-color: rgb(55,65,81);
+    color: rgb(156,163,175);
+    text-decoration: underline;
+}
+
+.xa-nav .xa-selected {
+    border-bottom: 2px solid rgb(51,136,255);
+}
+
+.xa-nav .xa-selected.dark {
+    border-bottom: 2px solid rgb(229,229,229);
+}
+
+.xa-archive-year
+{
+    border-left: 4px rgb(59,130,246) solid;
+}
+
+.xa-archive-year.dark {
+    border-left: 4px rgb(82,82,82) solid;
+}
+
+.xa-links-item {
+    border: 1px #f9f9fa solid;
+}
+
+.xa-links-item:hover {
+    border: 1px rgb(51,136,255) solid;
+}
+
+.xa-links-item.dark {
+    border: 1px rgb(82,82,82) solid;
+    background-color: rgb(55,65,81);
+}
+
+.xa-links-item.dark:hover {
+    border: 1px rgb(229,229,229) solid;
+    background-color: rgb(55,65,81);
+}
+
+.xa-categories {
+    font-size: 11pt;
+}
+
+.xa-categories .xa-selected {
+    border-bottom: 2px solid rgb(51,136,255);
+}
+
+.xa-categories .xa-selected.dark {
+    border-bottom: 2px solid rgb(229,229,229);
+}
+
+.xa-categories-title i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.xa-categories-sub.dark {
+    background-color: rgb(31,41,55);
+}
+
+.xa-statistics {
+
+}
+
+.xa-title a {
+    color: #2440b3;
+}
+
+.xa-title a.dark {
+    color: rgb(229,229,229);
+}
+
+.xa-title a:hover {
+    color: rgb(49,94,251);
+    text-decoration: underline;
+}
+
+.xa-title a.dark:hover {
+    color: rgb(229,229,229);
+}
+
+.xa-thumb {
+
+}
+
+.xa-thumb img{
+    width: 128px;
+    height: 85px;
+    border-radius: 12px;
+}
+
+.xa-content {
+    max-height: 85px;
+    line-height: 21px;
+}
+
+.xa-left-bar-item a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #edf1fd;
+    color: #0d1117;
+}
+
+.xa-left-bar-btn-exist {
+    border-color: #fee;
+    background-color: #fff6f6;
+}
+
+.xa-left-bar-btn-exist i {
+    color: #ff7b72;
+}
+
+.xa-left-bar-text-exist {
+    color: #ff7b72;
+}
+
+
+.xa-left-bar-item i {
+    font-size:16pt;
+}
+
+.xa-sidebar {
+    width: 340px;
+}
+
+.xa-sidebar .xa-no {
+    width: 16px;
+    display: inline-block;
+    color: #9195A3;
+}
+
+.xa-sidebar .xa-no-1 {
+    color: #FE2D46;
+}
+
+.xa-sidebar .xa-no-2 {
+    color: #F60;
+}
+
+.xa-sidebar .xa-no-3 {
+    color: #FAA90E;
+}
+
+.xa-sidebar-item ul li {
+    height: 32px;
+    line-height: 32px;
+}
+
+.xa-sidebar-item ul li a {
+    color: #2440b3;
+}
+
+.xa-sidebar-item ul li a.dark {
+    color: rgb(156,163,175);
+}
+
+.xa-sidebar-item ul li a:hover {
+    color: rgb(49,94,251);
+    text-decoration: underline;
+}
+
+.xa-sidebar-item ul li a.dark:hover {
+    color: rgb(156,163,175);
+    text-decoration: underline;
+}
+
+.xa-sidebar-tag ul li a:hover {
+    background-color: rgb(59,130,246);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.xa-sidebar-tag ul li a.dark:hover {
+    color: rgb(156,163,175);
+    background-color: #4b4b50;
+    text-decoration: none;
+}
+
+.xa-sidebar-author {
+    background-color: #f9f9fa;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.xa-sidebar-author.dark {
+    background-color: rgb(31,41,55);
+}
+
+.xa-pager {
+    width: 1340px;
+}
+
+.xa-pager li a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #2440b3;
+}
+
+.xa-pager li a.dark {
+    background-color: #4b4b50;
+    color: rgb(156,163,175);
+}
+
+.xa-pager li a:hover {
+    background-color: #4e6ef2;
+    color: #ffffff;
+}
+
+.xa-pager li a.dark:hover {
+    background-color: rgb(10,12,25);
+    color: rgb(156,163,175);
+}
+
+.xa-pager .xa-pager-selected a {
+    background-color: #4e6ef2;
+    color: #ffffff;
+}
+
+.xa-pager .xa-pager-selected.dark {
+    background-color: rgb(10,12,25);
+    color: rgb(156,163,175);
+}
+
+.xa-pager .xa-pn a {
+    width: 80px;
+}
+
+.xa-footer {
+    width: 1340px;
+}
+
+.xa-post-title {
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Microsoft Yahei, 微软雅黑, 宋体;
+    line-height: 50px;
+    padding-bottom: 27px;
+    color: #000;
+}
+
+.xa-post-title.dark {
+    color: rgb(229,229,229);
+}
+
+.xa-post-info {
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 14px;
+}
+
+.xa-post-tag {
+    padding: 20px 0 30px 0;
+}
+
+.xa-post-tag a {
+    border: 1px solid rgb(156,163,175);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.xa-post-copy {
+
+}
+
+.xa-post-h2 {
+    padding-bottom: 10px;
+}
+
+.xa-post-share {
+    background-color: #ffffff;
+}
+
+.xa-post-share.dark {
+    background-color: #4b4b50;
+}
+
+.xa-comment {
+    padding-top: 30px;
+}
+
+.xa-comment-h2 {
+    padding-bottom: 10px;
+}
+
+.xa-comment-public {
+    background-color:  #f5f5f6;
+    border-radius: 12px;
+    height: 133px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.xa-comment-public.dark {
+    background-color: #6c6c72;
+    border-color: #4b4b50;
+}
+
+.xa-comment-public textarea {
+    background-color: transparent;
+    width: 100%;
+    height: 85px;
+    border: none;
+    color: #1f1f1f;
+    resize: none;
+    padding: 15px 15px 5px 15px;
+}
+
+.xa-comment-public textarea.focus {
+    border: none;
+}
+
+.xa-comment-reply {
+    background: transparent;
+}
+
+.xa-comment-reply.dark {
+    background: transparent;
+}
+
+.xa-comment-reply a {
+    padding: 4px 6px;
+    border: 1px solid rgb(209,213,219);
+    border-radius: 6px;
+}
+
+.xa-comment-reply a.dark {
+    background-color: #4b4b50;
+    color: rgb(156,163,175);
+    border-width: 0px;
+}
+
+.xa-comment-reply a.dark:hover {
+    background-color: rgb(82,82,82);
+    color:  #f5f6f5;
+}
+
+.xa-comment-list {
+    margin: 28px 0;
+}
+
+.xa-comment-list ol li {
+    margin-bottom: 12px;
+}
+
+.xa-comment-children-list {
+    margin-left: 64px;
+}
