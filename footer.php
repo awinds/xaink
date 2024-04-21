@@ -18,7 +18,7 @@
             <?php endif ?>
         </div>
         <div class="px-2">
-            <span>Powered by <a href="http://typecho.org" rel="external nofollow" target="_blank">Typecho</a>. Theme by <a rel="external nofollow" href="https://xiaoa.me">XiaoA</a></span>
+            <span>Powered by <a href="http://typecho.org" rel="external nofollow" target="_blank">Typecho</a>. Theme by <a rel="external nofollow" href="https://www.xa.ink">XaInk</a></span>
         </div>
     </div>
 </footer>

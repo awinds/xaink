@@ -37,7 +37,8 @@ Demo:[https://www.xa.ink][2]
  - 使用[OwO](https://github.com/DIYgod/OwO)表情 
  
 # License 
-Open sourced under the MIT license. 
+ - Open sourced under the MIT license. 
+ - 使用请保留 Theme by [XaInk][2] 
 
 # 更新说明 
 ##1.0 
