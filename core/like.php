@@ -8,11 +8,10 @@ function xaAddLike($cid)
     $result = null;
     if (empty($exist)) {
         $result = $db->query($db->insert('table.fields')->rows($like));
-    } else {
-        $like['int_value'] = $exist['int_value'] + 1;
-        $result = $db->query($db->update('table.fields')->rows($like)->where('cid = ? AND name = ?', $cid, 'likeNum'));
     }
-
+    $like['int_value'] = $exist['int_value'] + 1;
+    $result = $db->query($db->update('table.fields')->rows($like)->where('cid = ? AND name = ?', $cid, 'likeNum'));
+    
     if($result){
         $cookie = Typecho_Cookie::get("__xa_like_cids");
         $cids = null;
