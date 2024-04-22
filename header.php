@@ -71,11 +71,11 @@
             <div class="xa-logo flex items-center justify-center">
                 <?php if ($this->options->logoUrl): ?>
                 <a href="<?php $this->options->siteUrl(); ?>">
-                    <img data-original="<?php $this->options->logoUrl() ?>" src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" class="lazy w-full">
+                    <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" class="w-full">
                 </a>
                 <?php else: ?>
                     <a href="<?php $this->options->siteUrl(); ?>">
-                        <img data-original="<?php $this->options->themeUrl("assets/images/logo.png"); ?>" alt="<?php $this->options->title() ?>" class="lazy w-full">
+                        <img src="<?php $this->options->themeUrl("assets/images/logo.png"); ?>" alt="<?php $this->options->title() ?>" class="w-full">
                     </a>
                 <?php endif; ?>
             </div>
