@@ -139,7 +139,7 @@ header.dark {
 }
 
 header .xa-search button {
-    width: 110px;
+    width: 120px;
 }
 
 header form {
@@ -461,7 +461,6 @@ h3 {
 }
 
 .xa-sidebar-item ul li {
-    height: 32px;
     line-height: 32px;
 }
 

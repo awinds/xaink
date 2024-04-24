@@ -1,7 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
-<div class="xa-categories pt-2 mx-4 hidden md:block md:ml-32 md:px-1">
+<div class="xa-categories pt-2 mx-4 hidden lg:block lg:ml-32 lg:px-1">
     <ul class="flex space-x-8">
         <li class="relative xa-categories-title <?php if($this->is('index')): ?>xa-selected<?php endif; ?> ">
             <a href="<?php $this->options->siteUrl(); ?>" title="首页" class="xa-categories-title text-gray-500 hover:text-gray-700">首页</a>
@@ -15,12 +15,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 $childs = $categorys->getAllChildren($categorys->mid); ?>
                 <li class="relative xa-categories-title <?php if(xaIsActiveCategory($this,$categorys->slug)): ?>xa-selected<?php endif; ?> ">
                     <a href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name();?>" class="xa-categories-title text-gray-500 hover:text-gray-700"><?php $categorys->name();?>
-                        <?php if (count($childs) > 0): ?>
+                        <!-- 这里增加了功能，列表目录不再显示子目录 -->
+                        <?php if (count($childs) > 0 && !xaIsListCategory($categorys->mid)):  ?>
                             <!-- 图标 -->
                             <i class="ti ti-chevron-down"></i>
                         <?php endif; ?>
                     </a>
-                    <?php if (count($childs) > 0): ?>
+                    <!-- 这里增加了功能，列表目录不再显示子目录 -->
+                    <?php if (count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
                     <!-- 子分类下拉框 -->
                     <div class="xa-categories-sub xa-theme absolute top-full left-0 w-28 bg-white rounded-md shadow-md z-11 hidden">
                         <?php
@@ -50,7 +52,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     }
                     $childs = $categorys->getAllChildren($categorys->mid); ?>
                     <a href="<?php $categorys->permalink(); ?>"><li class="px-4 py-2 rounded-md"><?php $categorys->name();?></li></a>
-                    <?php if (count($childs) > 0): ?>
+                    <?php if (count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
                             <?php
                             foreach ($childs as $childmid) {
                                 $child = $categorys->getCategory($childmid);
@@ -71,4 +73,4 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         </ul>
     </div>
 </aside>
-<div id="xa-aside-mask" class="hidden md:hidden fixed top-0 left-0 h-full w-full z-40 bg-gray-500 bg-opacity-50"></div>
+<div id="xa-aside-mask" class="hidden lg:hidden fixed top-0 left-0 h-full w-full z-40 bg-gray-500 bg-opacity-50"></div>

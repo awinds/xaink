@@ -33,10 +33,10 @@ if (isset($_POST['action'])
     <!-- 分类 -->
     <?php $this->need("core/menu.php"); ?>
     <!-- 内容 -->
-    <div class="w-full flex justify-between mt-4 px-4 md:px-1">
+    <div class="w-full flex justify-between mt-4 px-4 lg:px-1">
         <?php $this->need("core/toolbar.php"); ?>
         <!-- 列表 -->
-        <div id="main-center" class="flex-1 mx-1 md:mr-12 md:ml-32">
+        <div id="main-center" class="flex-1 mx-1 lg:mr-12 lg:ml-32">
             <!-- 文章 -->
             <div class="xa-post" itemscope itemtype="https://schema.org/NewsArticle">
                 <div class="xa-post-title xa-theme" itemprop="name headline">

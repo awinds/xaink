@@ -12,9 +12,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <!-- 分类 -->
     <?php $this->need("core/menu.php"); ?>
     <!-- 内容 -->
-    <div class="w-full flex justify-between mt-4 px-4 md:px-1">
+    <div class="w-full flex justify-between mt-4 px-4 lg:px-1">
         <!-- 列表 -->
-        <div id="main-center" class="flex-1 mx-1 md:mr-12 md:ml-32">
+        <div id="main-center" class="flex-1 mx-1 lg:mr-12 lg:ml-32">
             <!-- 友情链接 -->
             <h2 class="py-4" itemprop="name headline">友情链接</h2>
             <?php if(xaPluginIsActivated("Links")): ?>

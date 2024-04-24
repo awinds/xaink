@@ -34,6 +34,45 @@ function xaGetOptionValue($name, $default)
     return Helper::options()->$name ? Helper::options()->$name : $default;
 }
 
+
+/**
+ * 输出所有分类
+ * @return string
+ */
+function xaGetCategoryies()
+{
+    $db = Typecho_Db::get();
+    $prow = $db->fetchAll(
+        $db
+            ->select()
+            ->from("table.metas")
+            ->where("type = ?", "category")
+    );
+    $text = "";
+    foreach ($prow as $item) {
+        $text .= $item["name"] . "(" . $item["mid"] . ")" . "&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+    return $text;
+}
+
+
+/**
+ * 判断是否是定义的列表分类
+ * @param $mid
+ * @return bool
+ */
+function xaIsListCategory($mid) {
+    $list = Helper::options()->categoryListStyle;
+    if (empty($list)) {
+        return false;
+    }
+    $lists = explode(',',$list);
+    if (in_array($mid, $lists)) {
+        return true;
+    }
+    return false;
+}
+
 /**
  * 获取作者自定义头像
  * @param $authorMail
@@ -106,6 +145,27 @@ function xaIsActiveCategory($self, $slug)
     }
 
     return false;
+}
+
+
+/**
+ * 获取子分类
+ * @param $mid
+ * @return mixed
+ */
+function xaGetChildCategory($mid)
+{
+    $db = Typecho_Db::get(); // 获取数据库对象
+    // 构造查询语句
+    $query = $db->select()->from('table.metas')
+        ->where('type = ?', 'category')
+        ->where('parent = ?', $mid);
+    // 执行查询并获取结果
+    $row = $db->fetchAll($query);
+    if ($row) {
+        return $row;
+    }
+    return null;
 }
 
 /**
@@ -190,9 +250,24 @@ function xaGetHotPosts($limit = 10)
         ->where('table.contents.created <= ?', time())
         ->where('table.contents.type = ?', 'post')
         ->limit($limit)
-        ->order('table.contents.views', Typecho_Db::SORT_DESC);
+        ->order('table.contents.commentsNum', Typecho_Db::SORT_DESC);
     $result = $db->fetchAll($select, array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'push'));
     return $result;
+}
+
+/**
+ * 该分类下所有文章
+ * @param $mid
+ * @return mixed
+ */
+function xaGetAllPostByCategory($mid) {
+    $db = Typecho_Db::get();
+    $select = $db->select()->from('table.contents')
+        ->join('table.relationships', 'table.contents.cid = table.relationships.cid')
+        ->where('table.relationships.mid = ?', $mid)
+        ->order('table.contents.created', Typecho_Db::SORT_ASC);
+    $posts = $db->fetchAll($select, array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'push'));
+    return $posts;
 }
 
 /**

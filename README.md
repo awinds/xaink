@@ -5,6 +5,7 @@ Demo:[https://www.xa.ink][2]
 ![主题界面][3]
 
 # 特点
+ - typecho 1.2.1
  - 仿百度。
  - 响应式设计，支持明亮和黑暗模式。
  - 文章列表支持缩略图（字定义`thumbnail`），右侧悬停。
@@ -35,16 +36,19 @@ Demo:[https://www.xa.ink][2]
  - 使用[JQuery](https://jquery.com/)和相关插件 
  - 使用[jr-qrcode](https://github.com/diamont1001/jrQrcode)生成二维码 
  - 使用[OwO](https://github.com/DIYgod/OwO)表情 
- - 使用[tabler](https://tabler.io/)图标
  
 # License 
- - Open sourced under the MIT license. 
- - 使用请保留 Theme by [XaInk][2] 
+Open sourced under the MIT license. 
 
 # 更新说明 
-##1.0 
- 1. 手搓typecho主题 
- 2. CSS写的有问题，没有规划好，写到哪改到哪，没有做过明亮黑暗CSS，后续有时间再优化 
+## 1.0 
+ 1. 手搓typecho主题。 
+ 2. CSS写的有问题，没有规划好，写到哪改到哪，没有做过明亮黑暗CSS，后续有时间再优化。 
+## 1.1 
+ 1. 修改在移动适配时的问题，从md设备改到lg设备才为非移动端。 
+ 2. 修改右侧栏标题和评论过长没有换行的问题。 
+ 3. 增加了文章和页面直接支持缩略图和来源页的字段。
+ 4. 增加了可配置列表分类，类似收藏小说，菜单子分类不下拉，点击进去直接显示分类的列表（小说名），再点列表（小说名）进去直接显示标题目录（小说目录），不配置不影响正常使用。 
 
 
   [1]: https://github.com/awinds/xaink

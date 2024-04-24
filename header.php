@@ -80,7 +80,7 @@
                 <?php endif; ?>
             </div>
             <!-- 搜索框 -->
-            <div class="flex-1 hidden md:block flex items-center justify-start">
+            <div class="flex-1 hidden lg:block flex items-center justify-start">
                 <form method="post" action="<?php $this->options->siteUrl(); ?>"  class="xa-search flex items-center w-full dark:bg-gray-700">
                     <input type="text" name="s" placeholder="搜索一下，你就找到"
                            class="w-full border-l-2 border-t-2 border-b-2 border-gray-200 dark:border-gray-600 rounded-l-lg py-2 px-4 h-10 focus:outline-none focus:border-blue-500"
@@ -88,14 +88,14 @@
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 h-10 outline-blue-500 rounded-r-lg hover:bg-blue-600 focus:outline-none">搜索一下</button>
                 </form>
             </div>
-            <div class="hidden md:block md:mr-32" style="width: 340px;"></div>
+            <div class="hidden lg:block lg:mr-32" style="width: 340px;"></div>
         </div>
         <!-- 右侧靠右边栏 -->
         <div class="absolute right-2">
             <!-- 菜单和主题切换按钮 -->
             <div class="flex items-center space-x-2">
                 <!-- Page -->
-                <nav class="xa-nav hidden md:block flex items-center justify-between space-x-4 mr-2">
+                <nav class="xa-nav hidden lg:block flex items-center justify-between space-x-4 mr-2">
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while($pages->next()): ?>
                         <a<?php if($this->is('page', $pages->slug)): ?> class="xa-selected"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
@@ -129,7 +129,7 @@
                 <!-- 主题 -->
                 <button id="themeToggle"  class="dark:bg-gray-600 px-2 py-1.5 rounded-md hover:focus:outline-none" title="切换主题"><i class="ti ti-moon"></i></button>
                 <!-- 移动端菜单 -->
-                <button id="mobileNavToggle" class="md:hidden px-2 py-1.5 rounded-md hover:focus:outline-none" title="菜单"><i class="ti ti-menu-2"></i></button>
+                <button id="mobileNavToggle" class="lg:hidden px-2 py-1.5 rounded-md hover:focus:outline-none" title="菜单"><i class="ti ti-menu-2"></i></button>
             </div>
         </div>
     </div>

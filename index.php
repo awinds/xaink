@@ -5,7 +5,7 @@
  *
  * @package XaInk
  * @author XiaoA
- * @version 1.0.0
+ * @version 1.1
  * @link https://www.xa.ink/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
@@ -16,11 +16,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <!-- 分类 -->
     <?php $this->need("core/menu.php"); ?>
     <!-- 内容 -->
-    <div class="w-full flex justify-between mt-4 px-4 md:px-1">
+    <div class="w-full flex justify-between mt-4 px-4 lg:px-1">
         <!-- 列表 -->
-        <div id="main-center" class="flex-1 mx-1 md:mr-12 md:ml-32">
+        <div id="main-center" class="flex-1 mx-1 lg:mr-12 lg:ml-32">
             <!-- 统计和说明 -->
-            <div class="xa-statistics flex items-center justify-between pb-2 mt-2 md:pt-0">
+            <div class="xa-statistics flex items-center justify-between pb-2 mt-2 lg:pt-0">
                 <div class="flex items-center">
                     <?php
                     if($this->is('index')) {
@@ -34,7 +34,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     }
                     ?>
                 </div>
-                <div class="flex items-center space-x-4 hidden md:block"></div>
+                <div class="flex items-center space-x-4 hidden lg:block"></div>
             </div>
             <!-- 文章列表 -->
             <?php $this->need("core/list.php"); ?>

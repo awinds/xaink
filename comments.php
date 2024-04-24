@@ -101,7 +101,7 @@ function threadedComments($comments, $options)
         <?php if ($comments->have()): ?>
         <?php $comments->listComments(); ?>
         <?php endif; ?>
-        <!-- <div class="flex justify-center items-center w-full py-12">没有更多啦</div> -->
+        <div class="flex justify-center items-center w-full py-12">没有更多啦</div>
     </div>
 </div>
 <!-- 评论脚本 -->

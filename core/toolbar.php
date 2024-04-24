@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!-- 左侧功能栏 -->
-<div class="xa-left-bar w-32 fixed left-0 top-1/2 transform -translate-y-1/2 hidden md:block">
+<div class="xa-left-bar w-32 fixed left-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
     <div class="xa-left-bar-panel flex flex-col justify-center items-center space-y-4" style="display: none;">
         <div class="xa-left-bar-item flex flex-col justify-center items-center">
             <a title="评论" class="xa-button flex justify-center items-center" href="<?php $this->permalink() ?>#<?php $this->respondId(); ?>">

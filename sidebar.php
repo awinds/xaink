@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<div class="xa-sidebar hidden md:block md:mr-32">
+<div class="xa-sidebar hidden lg:block lg:mr-32">
     <!-- 用户信息 -->
     <section class="xa-sidebar-item xa-sidebar-author xa-theme">
         <div class="flex items-center space-x-4">
@@ -79,7 +79,7 @@
             $idxPost = 1;
             if (!empty($hotPosts)):
                 foreach ($hotPosts as $post): ?>
-                    <li>
+                    <li class="line-clamp-2">
                         <?php if($idxPost == 1): ?>
                         <span class="xa-no xa-no-1">1</span>
                         <?php elseif($idxPost == 2): ?>

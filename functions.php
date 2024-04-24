@@ -165,4 +165,37 @@ function themeConfig($form)
         _t('底部自定义html')
     );
     $form->addInput($siteFooterHtml);
+
+    $categoryListStyle = new Text(
+        'categoryListStyle',
+        null,
+        null,
+        _t('有子目录则显示子目录的列表，没子目录则显示文章的标题列表，列表ID(多个用半角,分隔)：1,2'),
+        _t('所有分类：'.xaGetCategoryies())
+    );
+    $form->addInput($categoryListStyle);
+}
+
+/**
+ * 文章与独立页自定义缩略图字段
+ */
+function themeFields(Typecho_Widget_Helper_Layout $layout)
+{
+    $thumbnail = new Typecho_Widget_Helper_Form_Element_Text(
+        "thumbnail",
+        null,
+        null,
+        _t("缩略图"),
+        _t("输入一个图片 url，作为缩略图显示在文章列表，没有则不显示")
+    );
+    $layout->addItem($thumbnail);
+
+    $copy_link = new Typecho_Widget_Helper_Form_Element_Text(
+        "copy_link",
+        null,
+        null,
+        _t("转发来源"),
+        _t("输入转发来源的 url，原创则保持为空")
+    );
+    $layout->addItem($copy_link);
 }

@@ -39,10 +39,10 @@ if (isset($_POST['action'])
     <!-- 分类 -->
     <?php $this->need("core/menu.php"); ?>
     <!-- 内容 -->
-    <div class="w-full flex justify-between mt-4 px-4 md:px-1">
+    <div class="w-full flex justify-between mt-4 px-4 lg:px-1">
         <?php $this->need("core/toolbar.php"); ?>
         <!-- 列表 -->
-        <div id="main-center" class="flex-1 mx-1 md:mr-12 md:ml-32" itemscope itemtype="https://schema.org/NewsArticle">
+        <div id="main-center" class="flex-1 mx-1 lg:mr-12 lg:ml-32" itemscope itemtype="https://schema.org/NewsArticle">
             <!-- 我的链接 -->
             <!-- <h2 class="py-4" itemprop="name headline"><?php $this->title(); ?></h2> -->
             <div class="xa-theme xa-post-content" itemprop="articleBody">
