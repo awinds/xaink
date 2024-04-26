@@ -128,9 +128,9 @@
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
         <h2 class="font-bold">日志存档<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
-        <ul class="grid grid-cols-2 gap-4">
+        <ul class="grid grid-cols-1 lg:grid-cols-3 gap-2">
             <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=Y年m月')
-                ->parse('<li><a href="{permalink}" class="px-4 py-2 rounded-full">{date}</a></li><li>'); ?>
+                ->parse('<li><a href="{permalink}" class="px-4 py-2 rounded-full">{date}</a></li>'); ?>
         </ul>
     </section>
     <?php endif; ?>
@@ -155,7 +155,7 @@
     <!--其它 -->
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
         <h2 class="font-bold">其它<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
-        <ul>
+        <ul class="mt-2 flex-col items-center">
             <li class="line-clamp-2 flex items-center">
                 <i class="ti ti-playstation-circle"></i>
                 <a href="https://www.foreverblog.cn/go.html" target="_blank" title="穿梭虫洞-随机访问十年之约友链博客">虫洞</a>

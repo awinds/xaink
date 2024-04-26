@@ -49,38 +49,39 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </ul>
             <!-- 年份归档 -->
             <h1 class="py-4 mt-8" itemprop="headline">按年</h1>
-            <div class="xa-theme xa-archive-year">
+            <div>
                 <?php
-                $archives = xaGetArchives($this);
-                foreach ($archives as $year => $posts) : ?>
-                    <div class="relative py-2">
-                        <div class="xa-theme xa-link-line"></div>
-                        <div class="xa-theme xa-link-circle"></div>
-                        <h2 class="ml-4"><a href="javascript:;" year="<?php echo $year;?>" title="展开/关闭" class="xa-archive-year-title"><?php echo $year;?>年</a><span class="xa-theme xa-count-tip"><?php echo count($posts); ?></span></h2>
-                    </div>
-                    <ul class="ml-4 my-2 flex flex-col space-y-4 hidden" id="xa-archive-year-item-<?php echo $year;?>">
-                    <?php foreach ($posts as $created => $post): ?>
-                         <li class="flex items-center justify-between">
-                            <div>
-                                <span class="font-bold mr-2"><?php echo date("m/d", $created) ?></span>
-                                <a class="xa-link" href="<?php echo $post["permalink"]; ?>"><?php echo $post["title"];?></a>
-                            </div>
-                            <div>
-                                <?php $categoryIdx = 0; ?>
-                                <?php if(count($post['categorys']) > 0): ?>
-                                    <?php foreach ($post['categorys'] as $category): ?>
-                                        <?php if($categoryIdx > 0): ?> | <?php endif; ?>
-                                        <a href="<?php echo $category["permalink"]; ?>"><?php echo $category['name'] ?></a>
-                                        <?php $categoryIdx++; ?>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    默认
-                                <?php endif; ?>
-                            </div>
+                $dates = $this->widget('Widget_Contents_Post_Date', 'type=month&format=Y-m');
+                $arcDates = array();
+                if ($dates->have()) {
+                    while ($dates->next()) {
+                        if(!is_array($arcDates[$dates->year])) {
+                            $arcDates[$dates->year] = array();
+                        }
+                        $item = array(
+                            "date"=>$dates->date,
+                            "permalink"=>$dates->permalink,
+                            "count"=>$dates->count
+                        );
+                        $arcDates[$dates->year][] = $item;
+                    }
+                }
+                ?>
+                <?php if (count($arcDates) > 0): ?>
+                    <?php foreach ($arcDates as $year=>$vals): ?>
+                    <h2 class="ml-4 py-4" itemprop="headline"><?php echo $year; ?></h2>
+                    <ul class="flex flex-wrap ml-4 gap-y-8 gap-x-12">
+                    <?php foreach ($vals as $val):  ?>
+                        <li>
+                            <a href="<?php echo $val['permalink']; ?>" rel="tag" title="<?php echo $val['date']; ?>"><?php echo $val['date']; ?></a>
+                            <span class="xa-theme xa-count-tip"><?php echo $val['count']; ?></span>
                         </li>
                     <?php endforeach; ?>
                     </ul>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li>这些年，他没有写文章!</li>
+                <?php endif; ?>
             </div>
         </div>
         <!-- 右侧栏 -->
