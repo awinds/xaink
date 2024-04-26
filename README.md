@@ -1,7 +1,10 @@
 # 关于
 因为想学习响应式布局练练手，所以萌生了开了一个主题的想法，而我正好在使用百度，何不就做个和百度一样的主题  
+
 Github:[https://github.com/awinds/xaink][1] 
+
 Demo:[https://www.xa.ink][2] 
+
 ![主题界面][3]
 
 # 特点
@@ -39,6 +42,7 @@ Demo:[https://www.xa.ink][2]
  
 # License 
 Open sourced under the MIT license. 
+保留Theme by Xaink，谢谢！
 
 # 更新说明 
 ## 1.2 
