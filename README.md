@@ -35,7 +35,7 @@ Demo:[https://www.xa.ink][2]
 主题设置页面位置：Typecho 后台->控制台->外观->设置外观。 
 
 # 技术栈 
- - 使用[Tailwind CSS](https://www.tailwindcss.cn/) 
+ - 使用[Tailwind CSS](https://www.tailwindcss.cn/) min发布版，不用打包
  - 使用[JQuery](https://jquery.com/)和相关插件 
  - 使用[jr-qrcode](https://github.com/diamont1001/jrQrcode)生成二维码 
  - 使用[OwO](https://github.com/DIYgod/OwO)表情 
@@ -45,6 +45,8 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.2.1 
+ 1. 修复移动浏览器上左侧菜单无法滚动的问题。
 ## 1.2 
  1. 修改归档页面按年显示统计，不再显示文章，只显示按年再按月统计。
  2. 增加时间线页面，按年显示文章，当年显示，其它折叠。

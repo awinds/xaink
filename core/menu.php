@@ -40,7 +40,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 </div>
 
 <!-- 移动设备上的侧边菜单 -->
-<aside class="xa-theme fixed top-0 left-0 h-full w-3/5 z-50 transform transition duration-300 ease-in-out -translate-x-full">
+<aside class="xa-theme fixed overflow-y-auto top-0 left-0 h-full w-3/5 z-50 transform transition duration-300 ease-in-out -translate-x-full">
     <div class="mt-12">
         <ul class="flex flex-col space-y-4 px-4">
             <a href="<?php $this->options->siteUrl(); ?>"><li class="px-4 py-2 rounded-md">首页</li></a>
@@ -64,7 +64,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <?php endif; ?>
         </ul>
     </div>
-    <div class="mt-16">
+    <div class="mt-16 mb-4">
         <ul class="flex flex-col space-y-4 px-4">
             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
             <?php while($pages->next()): ?>

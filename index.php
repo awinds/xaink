@@ -5,7 +5,7 @@
  *
  * @package XaInk
  * @author XiaoA
- * @version 1.2
+ * @version 1.2.1
  * @link https://www.xa.ink/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
