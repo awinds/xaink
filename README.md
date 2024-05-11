@@ -7,6 +7,8 @@ Demo:[https://www.xa.ink][2]
 
 ![主题界面][3]
 
+![主题界面][4]
+
 # 特点
  - typecho 1.2.1
  - 仿百度。
@@ -64,4 +66,5 @@ Open sourced under the MIT license.
 
   [1]: https://github.com/awinds/xaink
   [2]: https://www.xa.ink
-  [3]: http://www.xa.ink/usr/uploads/2024/04/1247611939.png
+  [3]: https://raw.githubusercontent.com/awinds/xaink/main/screenshot.png
+  [4]: https://raw.githubusercontent.com/awinds/xaink/main/screenshot2.png
