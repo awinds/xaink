@@ -13,9 +13,9 @@ function threadedComments($comments, $options)
             <!-- 头像 -->
             <div class="flex-shrink-0">
                 <?php if ($comments->authorId == $comments->ownerId): ?>
-                <img data-original="<?php echo xaGetAuthorAvatar($comments->mail); ?>" alt="<?php $comments->author; ?>" class="lazy w-12 h-12 rounded-full">
+                <img data-original="<?php echo xaGetAuthorAvatar($comments->mail); ?>" title="<?php echo $comments->author; ?>" alt="<?php echo $comments->author; ?>" class="lazy w-12 h-12 rounded-full">
                 <?php else: ?>
-                <img data-original="<?php echo xaGetAvatar($comments->mail); ?>" alt="<?php $comments->author; ?>" class="lazy w-12 h-12 rounded-full">
+                <img data-original="<?php echo xaGetAvatar($comments->mail); ?>" title="<?php echo $comments->author; ?>" alt="<?php echo $comments->author; ?>" mail="<?php echo $comments->mail; ?>" class="lazy w-12 h-12 rounded-full">
                 <?php endif; ?>
             </div>
             <!-- 评论内容 -->

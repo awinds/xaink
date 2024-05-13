@@ -20,7 +20,7 @@
                 <?php $this->category(" | ", true, "默认"); ?>
                 - <a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('去评论', '1人评论', '%d人评论'); ?></a>
                 <?php if(xaPluginIsActivated('Stat')): ?> - <?php $this->stat(); ?>人浏览<?php endif; ?>
-                <?php if(xaPluginIsActivated('Sticky') && $this->istop): ?> - 置顶 <?php endif; ?>
+                <?php if(xaPluginIsActivated('Sticky') && $this->istop): ?> - 推广 <?php endif; ?>
                 </div>
                 <div class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>

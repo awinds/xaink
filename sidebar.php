@@ -14,7 +14,7 @@
                 <div class="font-bold"><?php $this->author->screenName(); ?></div>
                 <!-- 签名 -->
                 <div class="text-sm text-gray-500">
-                    <?php if($this->options->authorProfile): $this->options->authorProfile(); else: $this->options->description(); endif; ?>
+                    <?php if($this->options->authorSign): $this->options->authorSign(); else: $this->options->description(); endif; ?>
                 </div>
             </div>
         </div>

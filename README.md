@@ -47,6 +47,9 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.3 
+ 1. 修复QQ头像显示问题。
+ 2. 修改个人区域签名和简介显示问题。
 ## 1.2.1 
  1. 修复移动浏览器上左侧菜单无法滚动的问题。
 ## 1.2 

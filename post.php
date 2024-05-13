@@ -110,7 +110,6 @@ function doLike(cid) {
                 $('.xa-like').attr('title',"取消");
                 $('#likeNum').addClass('xa-left-bar-text-exist');
                 $('#likeExist').val("1");
-                console.log('add',data.message);
             }
             else if(func == 'reduce') {
                 $('#likeNum').text(parseInt(val) - 1);
@@ -118,7 +117,6 @@ function doLike(cid) {
                 $('.xa-like').attr('title',"点赞");
                 $('#likeNum').removeClass('xa-left-bar-text-exist');
                 $('#likeExist').val("0");
-                console.log('reduce',data.message);
             }
         }
     }, "json");

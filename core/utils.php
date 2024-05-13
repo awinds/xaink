@@ -93,15 +93,12 @@ function xaGetAuthorAvatar($authorMail)
  */
 function xaGetAvatar($email)
 {
-    $b = str_replace('@qq.com','',$email);
+    $email = strtolower($email);
+    $qq = str_replace('@qq.com','',$email);
     $imgUrl = 'https://cravatar.cn/avatar/none';
-    if(stristr($email,'@qq.com') && is_numeric($b) && strlen($b)<11 && strlen($b)>4 ){
-        $nk = 'https://s.p.qq.com/pub/get_face?img_type=3&uin='.$b;
-        $c = get_headers($nk, true);
-        $d = $c['Location'];
-        $q = json_encode($d,true);
-        $k = explode("&k=",$q)[1];
-        $imgUrl = 'https://q.qlogo.cn/g?b=qq&k='.$k.'&s=100';
+    if(stristr($email,'@qq.com') && is_numeric($qq) && strlen($qq)<11 && strlen($qq)>4 ){
+        $imgUrl = "https://q1.qlogo.cn/g?b=qq&nk=". $qq."&s=100";
+        return $imgUrl;
     }else{
         $email = md5(strtolower($email));
         $url = 'https://cravatar.cn/avatar/';
