@@ -7,8 +7,25 @@
  */
 function threadedComments($comments, $options)
 {
+    $commentClass = "";
+    if ($comments->authorId) {
+        if ($comments->authorId == $comments->ownerId) {
+            $commentClass .= " comment-by-author";
+        } else {
+            $commentClass .= " comment-by-user";
+        }
+    }
     ?>
-    <li id="<?php $comments->theId(); ?>" class="flex flex-col">
+    <li id="<?php $comments->theId(); ?>" class="flex flex-col<?php
+    if ($comments->levels > 0) {
+        echo " xa-comment-child";
+        $comments->levelsAlt(" comment-level-odd", " comment-level-even");
+    } else {
+        echo " xa-comment-parent";
+    }
+    $comments->alt(" comment-odd", " comment-even");
+    echo $commentClass;
+    ?>">
         <div class="flex items-start space-x-4">
             <!-- 头像 -->
             <div class="flex-shrink-0">
@@ -48,8 +65,8 @@ function threadedComments($comments, $options)
             </div>
         </div>
         <?php if ($comments->children): ?>
-            <div class="xa-comment-children-list mt-4">
-                <?php $comments->threadedComments($options); ?>
+            <div class="xa-comment-children">
+            <?php $comments->threadedComments($options); ?>
             </div>
         <?php endif; ?>
     </li>

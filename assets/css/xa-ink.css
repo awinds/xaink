@@ -657,13 +657,20 @@ h3 {
 }
 
 .xa-comment-list {
-    margin: 28px 0;
 }
 
 .xa-comment-list ol li {
-    margin-bottom: 12px;
 }
 
-.xa-comment-children-list {
-    margin-left: 64px;
+.xa-comment-parent {
+    padding: 24px 0;
+}
+
+.xa-comment-parent {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.xa-comment-parent > .xa-comment-children {
+    padding-left: 64px;
+    margin-top: 12px;
 }

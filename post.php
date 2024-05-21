@@ -55,7 +55,7 @@ if (isset($_POST['action'])
                     </a>
                     </span>
                 </div>
-                <div class="xa-theme xa-post-content" itemprop="articleBody">
+                <div class="xa-theme xa-post-content" id="xa-post-content" itemprop="articleBody">
                     <?php $this->content(); ?>
                 </div>
                 <div class="xa-post-tag">

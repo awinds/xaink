@@ -71,6 +71,52 @@ $(document).ready(function() {
         $(id).slideToggle();
     });
 
+    //如果文章则生成导读
+    if($('#xa-post-content').length > 0 && $('#xa-toc').length > 0) {
+        const outline = new Outline({
+            // 文章显示区域的 DOM 元素或者选择器字符串
+            articleElement: '#xa-post-content',
+            // 要收集的标题选择器
+            selector: 'h1,h2,h3,h4,h5,h6',
+            // 负责文章区域滚动的元素
+            // String 类型 - 选择器字符串，默认值：html,body（window窗口）
+            // HTMLElement 类型 - DOM 元素
+            scrollElement: 'html,body',
+            title: false,
+            stickyHeight: 75,
+            // 文章导读菜单的位置
+            // relative - （默认值）创建独立的侧滑菜单
+            // sticky - 导航菜单将以 sticky 模式布局（需要确保菜单插入位置支持 sticky 模式布局）
+            // fixed - 导航菜单将以 fixed 模式布局，会自动监听滚动位置，模拟 sticky 布局
+            // sticky 和 fixed 布局时，需要设置 parentElement
+            // 2.0.0 暂时不支持在文章开始位置插入 chapters 导航菜单
+            position: 'sticky',
+            // 设置 position: relative 时，placment 定义侧滑菜单和 toolbar 导航位置：
+            // rtl - 菜单位置在窗口右侧，滑动动画为：right to left
+            // ltr - 菜单位置在窗口左侧，滑动动画为：left to right
+            // ttb - 菜单位置在窗口上方，滑动动画为：top to bottom
+            // btt - 菜单位置在窗口下方，滑动动画为：bottom to top
+            placement: '',
+            // 导航菜单将要插入的位置（DOM 元素）
+            // String 类型 - 选择器字符串
+            // HTMLElement 类型 - 插入的 DOM 元素
+            // 仅在 position 设置为 sticky 和 fixed 布局时有效
+            parentElement: '#xa-toc',
+            // 是否显示段落章节编号
+            showCode: false,
+            animationCurrent: false,
+            hasToolbar: false,
+            // 标题图标链接的 URL 地址
+            // （默认）没有设置定制，点击链接页面滚动到标题位置
+            // 设置了链接地址，则不会滚动定位
+            anchorURL: '',
+            // DIYer的福利
+            // 独立侧滑菜单时，customClass 会追加到 drawer 侧滑窗口组件
+            // 在文章中显示导航菜单时，customClass 会追加到 chapters 导航菜单
+            customClass: ''
+        });
+    }
+
     //悬停右边
     $('.xa-sidebar').stickySidebar({
         topSpacing: 118,

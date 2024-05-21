@@ -3,12 +3,12 @@
 <?php if ($this->have()): ?>
     <?php while ($this->next()): ?>
     <li class="mb-8" itemscope itemtype="http://schema.org/BlogPosting">
-        <h3 class="xa-title text-lg mb-2" itemprop="name headline"><a href="<?php $this->permalink(); ?>" title="<?php $this->title(); ?>"><?php $this->title(); ?></a></h3>
+        <h3 class="xa-title text-lg mb-2" itemprop="name headline"><a class="underline underline-offset-4" href="<?php $this->permalink(); ?>" title="<?php $this->title(); ?>"><?php $this->title(); ?></a></h3>
         <div class="flex items-center justify-between">
             <?php if ($thumbnail = xaGetThumbnail($this->cid, "")): ?>
             <meta itemprop="image" content="<?php echo $thumbnail; ?>"/>
             <div class="xa-thumb pr-4">
-                <img src="<?php echo $thumbnail; ?>" data-original="<?php echo $thumbnail; ?>" alt="<?php $this->title(); ?>" class="lazy object-cover">
+                <img src="<?php echo $thumbnail; ?>" data-original="<?php echo $thumbnail; ?>" alt="<?php $this->title(); ?>" class="lazy object-cover border border-gray-200">
             </div>
             <?php endif; ?>
             <div class="xa-content flex-1 flex flex-col justify-between h-full">
@@ -20,7 +20,7 @@
                 <?php $this->category(" | ", true, "默认"); ?>
                 - <a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('去评论', '1人评论', '%d人评论'); ?></a>
                 <?php if(xaPluginIsActivated('Stat')): ?> - <?php $this->stat(); ?>人浏览<?php endif; ?>
-                <?php if(xaPluginIsActivated('Sticky') && $this->istop): ?> - 推广 <?php endif; ?>
+                <?php if(xaPluginIsActivated('Sticky') && $this->istop): ?><i class="ti ti-ad-circle text-sm" title="置顶"></i><?php endif; ?>
                 </div>
                 <div class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>

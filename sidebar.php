@@ -69,6 +69,7 @@
             <?php endif; ?>
         </div>
     </section>
+
     <!-- 热门文章 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowPopularArticles', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
@@ -97,6 +98,30 @@
         </ul>
     </section>
     <?php endif; ?>
+
+    <?php  if($this->is('post') || $this->is('page')): ?>
+    <!-- 文章导读 -->
+    <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
+        <h2 class="font-bold">文章导读<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <div id="xa-toc"></div>
+    </section>
+    <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/outline.min.js?v=" . xaGetVersion()); ?>"></script>
+    <?php endif; ?>
+
+    <?php if($this->is('post')): ?>
+    <!-- 相关推荐 -->
+    <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
+        <h2 class="font-bold">相关推荐<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <?php $this->related(5)->to($relatedPosts); ?>
+        <ul>
+            <?php while ($relatedPosts->next()): ?>
+                <li class="line-clamp-2 pl-4"><a href="<?php $relatedPosts->permalink(); ?>" title="<?php $relatedPosts->title(); ?>"><?php $relatedPosts->title(); ?></a></li>
+            <?php endwhile; ?>
+        </ul>
+    </section>
+    <?php endif; ?>
+
+    <?php if(!$this->is('post') && !$this->is('page')): ?>
     <!-- 最新评论 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
@@ -124,6 +149,7 @@
         </ul>
     </section>
     <?php endif; ?>
+
     <!-- 日志存档 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
@@ -134,6 +160,7 @@
         </ul>
     </section>
     <?php endif; ?>
+
     <!-- 热门标签 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('PopularTags', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item xa-sidebar-tag rounded-lg mt-6 dark:bg-gray-700">
@@ -152,18 +179,20 @@
         </ul>
     </section>
     <?php endif; ?>
+
     <!--其它 -->
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
         <h2 class="font-bold">其它<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
         <ul class="mt-2 flex-col items-center">
-            <li class="line-clamp-2 flex items-center">
+            <li class="line-clamp-2 pl-4 flex items-center">
                 <i class="ti ti-playstation-circle"></i>
                 <a href="https://www.foreverblog.cn/go.html" target="_blank" title="穿梭虫洞-随机访问十年之约友链博客">虫洞</a>
             </li>
-            <li class="line-clamp-2 flex items-center">
+            <li class="line-clamp-2 pl-4 flex items-center">
                 <i class="ti ti-train"></i>
                 <a href="https://www.travellings.cn/go.html" target="_blank" title="开往">开往</a>
             </li>
         </ul>
     </section>
+    <?php endif; ?>
 </div>
