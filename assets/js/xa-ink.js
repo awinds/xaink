@@ -1,14 +1,12 @@
 let xa_theme ='';
 $(document).ready(function() {
-    console.log("XaInk Typecho Theme");
+    console.log("%cXaInk Typecho Theme By XiaoA", "color:#fff; background: linear-gradient(270deg, #986fee, #8695e6, #68b7dd, #18d7d3); padding: 8px 15px; border-radius: 0 15px 0 15px");
 
     if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         xa_theme = "dark";
         toggleTheme(xa_theme);
         console.log('toggleTheme end');
     }
-
-    $("img.lazy").lazyload();
 
     $('#themeToggle').on('click', function () {
         var tm = xa_theme == 'dark' ? '' : 'dark';
@@ -146,12 +144,14 @@ $(document).ready(function() {
     //sm (640px)	max-width: 640px;
     // md (768px)	max-width: 768px;
     // lg (1024px)	max-width: 1024px;
-
     //左悬停
     $(window).on('resize', function() {
         stickyLeftBar();
     });
     stickyLeftBar();
+
+    //图片加载放到最后
+    $("img.lazy").lazyload();
 });
 
 function stickyLeftBar() {

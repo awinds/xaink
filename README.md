@@ -47,6 +47,8 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.4.2
+ 1. 优化图片懒加载。
 ## 1.4.1
  1. 优化评论显示效果。
 ## 1.4

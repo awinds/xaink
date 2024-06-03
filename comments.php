@@ -72,7 +72,7 @@ function threadedComments($comments, $options)
     </li>
 <?php } ?>
 
-<div class="xa-comment">
+<div class="xa-comment" id="comments">
     <h2 class="xa-comment-h2">评论 <span><?php $this->commentsNum('', '1', '%d'); ?></span></h2>
     <?php $this->comments()->to($comments); ?>
     <?php if ($this->allow("comment")): ?>
