@@ -47,6 +47,8 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.4.3
+ 1. 优化tabler字体预加载，用户信息图标直接使用svg。
 ## 1.4.2
  1. 优化图片懒加载。
 ## 1.4.1
