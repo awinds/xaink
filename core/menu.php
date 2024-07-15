@@ -16,13 +16,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 <li class="relative xa-categories-title <?php if(xaIsActiveCategory($this,$categorys->slug)): ?>xa-selected<?php endif; ?> ">
                     <a href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name();?>" class="xa-categories-title text-gray-500 hover:text-gray-700"><?php $categorys->name();?>
                         <!-- 这里增加了功能，列表目录不再显示子目录 -->
-                        <?php if (count($childs) > 0 && !xaIsListCategory($categorys->mid)):  ?>
+                        <?php if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)):  ?>
                             <!-- 图标 -->
                             <i class="ti ti-chevron-down"></i>
                         <?php endif; ?>
                     </a>
                     <!-- 这里增加了功能，列表目录不再显示子目录 -->
-                    <?php if (count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
+                    <?php if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
                     <!-- 子分类下拉框 -->
                     <div class="xa-categories-sub xa-theme absolute top-full left-0 w-28 bg-white rounded-md shadow-md z-11 hidden">
                         <?php
@@ -52,7 +52,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     }
                     $childs = $categorys->getAllChildren($categorys->mid); ?>
                     <a href="<?php $categorys->permalink(); ?>"><li class="px-4 py-2 rounded-md"><?php $categorys->name();?></li></a>
-                    <?php if (count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
+                    <?php if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
                             <?php
                             foreach ($childs as $childmid) {
                                 $child = $categorys->getCategory($childmid);

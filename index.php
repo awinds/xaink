@@ -5,7 +5,7 @@
  *
  * @package XaInk
  * @author XiaoA
- * @version 1.4.3
+ * @version 1.4.4
  * @link https://www.xa.ink/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
@@ -30,7 +30,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         echo "此分类下文章0篇";
                     } elseif ($this->is('search')) {
                         $widget = new Widget_Contents_Post_Search();
-                        echo "为您找到相关文章".count($widget->stack)."篇";
+                        $num = isset($widget->stack) ? count($widget->stack) : 0;
+                        echo "为您找到相关文章".$num."篇";
                     }
                     ?>
                 </div>

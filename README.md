@@ -47,6 +47,10 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.4.4
+ 1. 感谢`atk2024`反馈的问题。
+ 2. 修改网站描述写太长，头像变形问题。
+ 3. 修改php8环境下，搜索界面500错误的bug。
 ## 1.4.3
  1. 优化tabler字体预加载，用户信息图标直接使用svg。
 ## 1.4.2

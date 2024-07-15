@@ -67,7 +67,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     }
                 }
                 ?>
-                <?php if (count($arcDates) > 0): ?>
+                <?php if (isset($arcDates) && count($arcDates) > 0): ?>
                     <?php foreach ($arcDates as $year=>$vals): ?>
                     <h2 class="ml-4 py-4" itemprop="headline"><?php echo $year; ?></h2>
                     <ul class="flex flex-wrap ml-4 gap-y-8 gap-x-12">

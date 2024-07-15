@@ -37,7 +37,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             </div>
                             <div>
                                 <?php $categoryIdx = 0; ?>
-                                <?php if(count($post['categorys']) > 0): ?>
+                                <?php if(isset($post['categorys']) && count($post['categorys']) > 0): ?>
                                     <?php foreach ($post['categorys'] as $category): ?>
                                         <?php if($categoryIdx > 0): ?> | <?php endif; ?>
                                         <a href="<?php echo $category["permalink"]; ?>"><?php echo $category['name'] ?></a>

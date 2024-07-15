@@ -20,7 +20,7 @@
                         }
                         if($isListCategory) {
                             $subCategorys = $this->widget('Widget_Metas_Category_List')->getAllChildren($this->pageRow['mid']);
-                            if (count($subCategorys) > 0) {
+                            if (isset($subCategorys) && count($subCategorys) > 0) {
                                 echo "分类<span class='mx-2 font-bold'>".$this->pageRow['name'] ." </span>子分类(".count($subCategorys).")";
                             }
                             else {
@@ -55,7 +55,7 @@
                 <div class="flex items-center space-x-4 hidden lg:block"></div>
             </div>
             <?php if($isListCategory): ?>
-                <?php if(count($subCategorys) > 0) : ?>
+                <?php if(isset($subCategorys) && count($subCategorys) > 0) : ?>
                     <!-- 子分类列表 -->
                     <?php $this->need("core/categorylist.php"); ?>
                 <?php else: ?>
@@ -67,14 +67,14 @@
             <?php $this->need("core/list.php"); ?>
             <?php endif;?>
         </div>
-        <?php if($isListCategory && count($subCategorys) == 0): ?>
+        <?php if($isListCategory && isset($subCategorys) && count($subCategorys) == 0): ?>
         <?php else: ?>
             <!-- 右侧栏 -->
             <?php $this->need('sidebar.php'); ?>
         <?php endif;?>
 </div>
 </main>
-<?php if($isListCategory || count($subCategorys) == 0): ?>
+<?php if($isListCategory || (isset($subCategorys) && count($subCategorys) == 0)): ?>
 <?php else: ?>
 <?php $this->need('core/pager.php'); ?>
 <?php endif;?>
