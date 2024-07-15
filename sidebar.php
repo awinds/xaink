@@ -9,7 +9,7 @@
             </div>
 
             <!-- 用户名和签名 -->
-            <div class="flex flex-col justify-between space-y-2">
+            <div class="flex flex-1 flex-col justify-between space-y-2">
                 <!-- 用户名 -->
                 <div class="font-bold"><?php $this->author->screenName(); ?></div>
                 <!-- 签名 -->
