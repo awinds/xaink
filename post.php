@@ -60,7 +60,7 @@ if (isset($_POST['action'])
                 </div>
                 <div class="xa-post-tag">
                     <h2 class="xa-post-h2">标签</h2>
-                    <div class="flex space-x-4">
+                    <div class="flex flex-wrap gap-4">
                         <?php $this->tags(" ", true, ""); ?>
                     </div>
                 </div>
