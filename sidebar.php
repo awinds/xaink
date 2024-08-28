@@ -89,7 +89,9 @@
     <!-- 热门文章 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowPopularArticles', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
-        <h2 class="font-bold">热门文章<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <h2 class="font-bold flex items-center">热门文章<span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-400">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" /></svg></span></h2>
         <ul>
             <?php
             $hotPosts = xaGetHotPosts();
@@ -118,7 +120,9 @@
     <?php  if($this->is('post') || $this->is('page')): ?>
     <!-- 文章导读 -->
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
-        <h2 class="font-bold">文章导读<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <h2 class="font-bold flex items-center">文章导读<span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-400">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" /></svg></span></h2>
         <div id="xa-toc"></div>
     </section>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/outline.min.js?v=" . xaGetVersion()); ?>"></script>
@@ -127,7 +131,10 @@
     <?php if($this->is('post')): ?>
     <!-- 相关推荐 -->
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
-        <h2 class="font-bold">相关推荐<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <h2 class="font-bold flex items-center">相关推荐<span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-400">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" />
+</svg></span></h2>
         <?php $this->related(5)->to($relatedPosts); ?>
         <ul>
             <?php while ($relatedPosts->next()): ?>
@@ -141,7 +148,9 @@
     <!-- 最新评论 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
-        <h2 class="font-bold">最新评论<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <h2 class="font-bold flex items-center">最新评论<span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-400">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" /></svg></span></h2>
         <ul>
             <?php $this->widget("Widget_Comments_Recent", [])->to($recentComments); ?>
             <?php if ($recentComments->have()): ?>
@@ -169,7 +178,9 @@
     <!-- 日志存档 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
-        <h2 class="font-bold">日志存档<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <h2 class="font-bold flex items-center">日志存档<span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-400">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" /></svg></span></h2>
         <ul class="grid grid-cols-1 lg:grid-cols-3 gap-2">
             <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=Y年m月')
                 ->parse('<li><a href="{permalink}" class="px-4 py-2 rounded-full">{date}</a></li>'); ?>
@@ -180,7 +191,9 @@
     <!-- 热门标签 -->
     <?php if (!empty($this->options->sidebarBlock) && in_array('PopularTags', $this->options->sidebarBlock)): ?>
     <section class="xa-sidebar-item xa-sidebar-tag rounded-lg mt-6 dark:bg-gray-700">
-        <h2 class="font-bold">热门标签<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <h2 class="font-bold flex items-center">热门标签<span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-400">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" /></svg></span></h2>
         <ul class="mt-2 flex flex-wrap gap-y-2">
             <?php $this->widget("Widget_Metas_Tag_Cloud", "ignoreZeroCount=1&limit=15")->to($tags); ?>
             <?php if ($tags->have()): ?>
@@ -198,15 +211,22 @@
 
     <!--其它 -->
     <section class="xa-sidebar-item rounded-lg mt-6 dark:bg-gray-700">
-        <h2 class="font-bold">其它<span><i class="ti ti-chevron-right text-gray-400"></i></span></h2>
+        <h2 class="font-bold flex items-center">其它<span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-gray-400">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" /></svg></span></h2>
         <ul class="mt-2 flex-col items-center">
             <li class="line-clamp-2 pl-4 flex items-center">
-                <i class="ti ti-playstation-circle"></i>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-playstation-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 21a9 9 0 0 0 9 -9a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9z" /><path d="M12 12m-4.5 0a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0" /></svg>
                 <a href="https://www.foreverblog.cn/go.html" target="_blank" title="穿梭虫洞-随机访问十年之约友链博客">虫洞</a>
             </li>
             <li class="line-clamp-2 pl-4 flex items-center">
-                <i class="ti ti-train"></i>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-train"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 13c0 -3.87 -3.37 -7 -10 -7h-8" /><path d="M3 15h16a2 2 0 0 0 2 -2" /><path d="M3 6v5h17.5" /><path d="M3 10l0 4" /><path d="M8 11l0 -5" /><path d="M13 11l0 -4.5" /><path d="M3 19l18 0" /></svg>
                 <a href="https://www.travellings.cn/go.html" target="_blank" title="开往">开往</a>
+            </li>
+            <li class="line-clamp-2 pl-4 flex items-center">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-packages"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 16.5l-5 -3l5 -3l5 3v5.5l-5 3z" /><path d="M2 13.5v5.5l5 3" /><path d="M7 16.545l5 -3.03" /><path d="M17 16.5l-5 -3l5 -3l5 3v5.5l-5 3z" /><path d="M12 19l5 3" /><path d="M17 16.5l5 -3" /><path d="M12 13.5v-5.5l-5 -3l5 -3l5 3v5.5" /><path d="M7 5.03v5.455" /><path d="M12 8l5 -3" /></svg>
+                <a href="https://cloud.tencent.com/developer/column/99647" target="_blank" title="
+偷得浮生半日闲">开发者社区</a>
             </li>
         </ul>
     </section>

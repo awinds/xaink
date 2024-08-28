@@ -2,7 +2,9 @@
 <!-- 右下角按钮 -->
 <div class="xa-fixed-btn">
     <!-- 返回顶部按钮 -->
-    <button class="hidden bg-blue-500 text-white dark:bg-gray-600 px-2 py-1.5 rounded-md hover:focus:outline-none" id="backToTop" title="返回顶部"><i class="ti ti-chevron-up"></i></button>
+    <button class="hidden bg-blue-500 text-white dark:bg-gray-600 px-2 py-1.5 rounded-md hover:focus:outline-none" id="backToTop" title="返回顶部">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>
+    </button>
 </div>
 
 <!-- 页脚 -->

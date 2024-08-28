@@ -123,7 +123,7 @@ $(document).ready(function() {
 
     if($('#OwO').length > 0) {
         var owo = new OwO({
-            logo: '<i class="ti ti-mood-happy"></i>',
+            logo: '<span class="flex items-center"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mood-happy"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 9l.01 0" /><path d="M15 9l.01 0" /><path d="M8 13a4 4 0 1 0 8 0h-8" /></svg></span>',
             container: document.getElementById('OwO'),
             target: document.getElementById('commentTextarea'),
             api: siteUrl + 'usr/themes/xaink/assets/js/OwO/OwO.json',
@@ -163,11 +163,13 @@ function stickyLeftBar() {
 function toggleUserMenu(flag) {
     if(flag == 'show') {
         $('.xa-login-menu').show();
-        $('.xa-login i').removeClass('ti-chevron-down').addClass('ti-chevron-up');
+        //$('.xa-login i').removeClass('ti-chevron-down').addClass('ti-chevron-up');
+        $('.xa-login .i').html('<svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>');
     }
     else {
         $('.xa-login-menu').hide();
-        $('.xa-login i').removeClass('ti-chevron-up').addClass('ti-chevron-down');
+        //$('.xa-login i').removeClass('ti-chevron-up').addClass('ti-chevron-down');
+        $('.xa-login .i').html('<svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>');
     }
 }
 
@@ -186,10 +188,12 @@ function toggleTheme(curTheme) {
     $('.xa-theme').toggleClass('dark');
 
     if(curTheme == 'dark') {
-        $('#themeToggle i').eq(0).removeClass('ti-moon').addClass('ti-sun');
+        //$('#themeToggle i').eq(0).removeClass('ti-moon').addClass('ti-sun');
+        $('#themeToggle').html('<svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>');
     }
     else {
-        $('#themeToggle i').eq(0).removeClass('ti-sun').addClass('ti-moon');
+        //$('#themeToggle i').eq(0).removeClass('ti-sun').addClass('ti-moon');
+        $('#themeToggle').html('<svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>');
     }
     xa_theme = curTheme;
     //保存

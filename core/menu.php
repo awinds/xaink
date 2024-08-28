@@ -18,7 +18,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <!-- 这里增加了功能，列表目录不再显示子目录 -->
                         <?php if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)):  ?>
                             <!-- 图标 -->
-                            <i class="ti ti-chevron-down"></i>
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
                         <?php endif; ?>
                     </a>
                     <!-- 这里增加了功能，列表目录不再显示子目录 -->

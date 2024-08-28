@@ -43,8 +43,10 @@
 
 .OwO .OwO-logo {
     line-height: 28px;
-    padding:2px 5px;
+    padding:5px 5px;
     height: 28px;
+    width: 28px;
+    display: flex;
 }
 
 .OwO.dark .OwO-logo {
@@ -111,6 +113,10 @@
 .OwO.dark .OwO-body .OwO-bar .OwO-packages .OwO-package-active {
     background-color: rgb(75,85,99);
     color: #f5f6f5;
+}
+
+svg {
+    display: inline-block;
 }
 
 body {

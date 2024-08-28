@@ -49,7 +49,7 @@
         ), '', ' - '); ?><?php $this->options->title(); ?><?php if($this->_currentPage>1) echo ' - 第 '.$this->_currentPage.' 页 '; ?></title>
     <link rel="shoucut icon" href="<?php $this->options->siteUrl . "favicon.ico" ?>">
     <?php $this->header("description=&generator=&pingback=&template=&xmlrpc=&wlw=&commentReply=&keywords="); ?>
-    <link rel="preload" href="<?php $this->options->themeUrl("assets/css/fonts/tabler-icons.woff2") ?>" as="font" type="font/woff2" crossorigin />
+<!--    <link rel="preload" href="--><?php //$this->options->themeUrl("assets/css/fonts/tabler-icons.woff2") ?><!--" as="font" type="font/woff2" crossorigin />-->
     <link href="<?php $this->options->themeUrl("assets/css/tailwind.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/tabler-icons.min.css"); ?>" rel="stylesheet"/>
     <link href="<?php $this->options->themeUrl("assets/js/OwO/OwO.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
@@ -113,7 +113,7 @@
                         <!-- 用户名 -->
                         <div><?php $this->user->screenName() ?></div>
                         <!-- 图标 -->
-                        <i class="ti ti-chevron-down"></i>
+                        <div class="i"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div>
                     </div>
 
                     <!-- 下拉框 -->
@@ -130,9 +130,11 @@
                 <?php endif; ?>
 
                 <!-- 主题 -->
-                <button id="themeToggle"  class="dark:bg-gray-600 px-2 py-1.5 rounded-md hover:focus:outline-none" title="切换主题"><i class="ti ti-moon"></i></button>
+                <button id="themeToggle"  class="dark:bg-gray-600 px-2 py-1.5 rounded-md hover:focus:outline-none" title="切换主题">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-moon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
+                </button>
                 <!-- 移动端菜单 -->
-                <button id="mobileNavToggle" class="lg:hidden px-2 py-1.5 rounded-md hover:focus:outline-none" title="菜单"><i class="ti ti-menu-2"></i></button>
+                <button id="mobileNavToggle" class="lg:hidden px-2 py-1.5 rounded-md hover:focus:outline-none" title="菜单"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg></button>
             </div>
         </div>
     </div>
