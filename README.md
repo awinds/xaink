@@ -48,7 +48,7 @@ Open sourced under the MIT license.
 
 # 更新说明 
 ## 1.4.5
- 1. 替换icons的<i>使用为svg,省掉字体的加载。
+ 1. 替换icons的`<i>`直接使用`svg`,省掉字体的加载。
 ## 1.4.4
  1. 感谢`atk2024`反馈的问题。
  2. 修改网站描述写太长，头像变形问题。
