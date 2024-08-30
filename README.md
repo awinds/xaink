@@ -41,12 +41,17 @@ Demo:[https://www.xa.ink][2]
  - 使用[JQuery](https://jquery.com/)和相关插件 
  - 使用[jr-qrcode](https://github.com/diamont1001/jrQrcode)生成二维码 
  - 使用[OwO](https://github.com/DIYgod/OwO)表情 
+ - 使用[tabler](https://tabler.io)图标
  
 # License 
 Open sourced under the MIT license. 
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.4.6
+ 1. 评论表情使用Emoji问题修复(在非utf8mb4下不使用Emoji)。
+ 2. 修改小设备上按钮显示问题。
+ 3. 调整手机设备上回复评论显示效果。
 ## 1.4.5
  1. 替换icons的`<i>`直接使用`svg`,省掉字体的加载。
 ## 1.4.4

@@ -370,3 +370,17 @@ function xaGetSearchTotal($keywords)
     $count = $db->fetchRow($query);
     return $count['qty'];
 }
+
+
+/**
+ * 检查是否支持utf8mb4
+ */
+function xaIsUtf8mb4()
+{
+    $db = Typecho_Db::get();
+    $dbconfig = $db->getConfig(Typecho_Db::WRITE);
+    if($dbconfig['charset'] === 'utf8mb4') {
+        return 'yes';
+    }
+    return 'no';
+}

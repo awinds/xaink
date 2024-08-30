@@ -435,6 +435,10 @@ h3 {
     color: #ff7b72;
 }
 
+.xa-left-bar-btn-exist svg {
+    color: #ff7b72;
+}
+
 .xa-left-bar-text-exist {
     color: #ff7b72;
 }
@@ -677,6 +681,13 @@ h3 {
 }
 
 .xa-comment-parent > .xa-comment-children {
-    padding-left: 64px;
     margin-top: 12px;
+    padding-left: 15px;
+}
+
+@media (min-width: 1024px) { /* 大屏设备 */
+    .xa-comment-parent > .xa-comment-children {
+        margin-top: 12px;
+        padding-left: 64px;
+    }
 }

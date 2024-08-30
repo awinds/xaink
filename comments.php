@@ -38,7 +38,7 @@ function threadedComments($comments, $options)
             <!-- 评论内容 -->
             <div class="flex-1 space-y-2 items-start">
                 <!-- 用户名 -->
-                <div class="font-bold"><?php echo xaGetCommentAuthor($comments); ?><?php if ($comments->authorId == $comments->ownerId): ?><i title="作者" class="ti ti-user-edit"></i><?php endif; ?></div>
+                <div class="font-bold flex items-center"><?php echo xaGetCommentAuthor($comments); ?><?php if ($comments->authorId == $comments->ownerId): ?><i title="作者" class="flex"><svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-edit"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" /><path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z" /></svg></i><?php endif; ?></div>
                 <!-- 内容 -->
                 <?php if ($comments->status == "waiting"): ?>
                 <div>您的评论正等待审核！</div>
@@ -53,12 +53,12 @@ function threadedComments($comments, $options)
                             - <?php XQLocation_Plugin::render($comments->ip); ?>
                         <?php endif; ?>
                     </div>
-                    <div id="reply-<?php $comments->theId(); ?>" data-author="<?php echo $comments->author; ?>">
+                    <div id="reply-<?php $comments->theId(); ?>" class="flex justify-end px-0" style="width: 110px;" data-author="<?php echo $comments->author; ?>">
                         <button class="xa-comment-reply" title="取消回复" onclick="TypechoComment.customCancelReply('<?php $comments->theId(); ?>');">
-                            <?php $comments->cancelReply("<i class=\"ti ti-message\"></i>取消回复"); ?>
+                            <?php $comments->cancelReply("<svg  xmlns=\"http://www.w3.org/2000/svg\"  width=\"16\"  height=\"16\"  viewBox=\"0 0 24 24\"  fill=\"none\"  stroke=\"currentColor\"  stroke-width=\"2\"  stroke-linecap=\"round\"  stroke-linejoin=\"round\"  class=\"icon icon-tabler icons-tabler-outline icon-tabler-message\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M8 9h8\" /><path d=\"M8 13h6\" /><path d=\"M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z\" /></svg>取消回复"); ?>
                         </button>
                         <button class="xa-comment-reply" title="回复">
-                            <?php $comments->reply("<i class=\"ti ti-message\"></i>回复"); ?>
+                            <?php $comments->reply("<svg  xmlns=\"http://www.w3.org/2000/svg\"  width=\"16\"  height=\"16\"  viewBox=\"0 0 24 24\"  fill=\"none\"  stroke=\"currentColor\"  stroke-width=\"2\"  stroke-linecap=\"round\"  stroke-linejoin=\"round\"  class=\"icon icon-tabler icons-tabler-outline icon-tabler-message\"><path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M8 9h8\" /><path d=\"M8 13h6\" /><path d=\"M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z\" /></svg>回复"); ?>
                         </button>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ function threadedComments($comments, $options)
                 <?php $security = $this->widget("Widget_Security"); ?>
                 <input type="hidden" name="_" value="<?php echo $security->getToken($this->request->getReferer()); ?>" />
                 <span class="flex justify-between items-center px-2 space-x-2 py-1">
-                   <div id="OwO" class="xa-theme OwO flex-1 w-full"></div>
+                    <div id="OwO" class="xa-theme OwO flex-1 w-full" isEmoji="<?php echo xaIsUtf8mb4();?>"></div>
                     <div class="w-16">
                         <button type="submit" id="commentSubmit" class="px-4 py-1 bg-blue-500 text-white rounded-2xl hover:bg-blue-600 focus:outline-none">发表</button>
                     </div>
@@ -179,8 +179,6 @@ window.TypechoComment = {
         textarea.placeholder = "发表神评妙论";
         return false;
     }, customCancelReply: function (cid) {
-        //alert('customCancelReply'+cid);
-
         $('#reply-'+cid+' button a').eq(0).hide();
         $('#reply-'+cid+' button a').eq(1).show();
     }
