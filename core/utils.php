@@ -111,6 +111,27 @@ function xaGetAvatar($email)
 }
 
 /**
+ * 通过id获取分类的svg图标
+ * @param $mid
+ * @return string
+ */
+function xaGetCategorySvg($mid)
+{
+    $icons = trim(Helper::options()->categoryIconSvg);
+    $lines = preg_split('/\r\n|\r|\n/', $icons);
+    foreach ($lines as $line) {
+        $conts = explode('|',$line);
+        if (count($conts) != 2) {
+            continue;
+        }
+        if($conts[0] == $mid && $conts[1] != '') {
+            return $conts[1];
+        }
+    }
+    return '';
+}
+
+/**
  * 判断当前是菜单否激活
  * @param $self
  * @return string

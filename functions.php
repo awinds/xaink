@@ -5,6 +5,7 @@ error_reporting(0);
 use \Typecho\Widget\Helper\Form\Element\Text;
 use \Typecho\Widget\Helper\Form\Element\Checkbox;
 use \Typecho\Widget\Helper\Form\Element\Radio;
+use \Typecho\Widget\Helper\Form\Element\Textarea;
 
 require_once('core/utils.php');
 require_once('core/like.php');
@@ -157,7 +158,7 @@ function themeConfig($form)
     );
     $form->addInput($enablePostCopyright);
 
-    $siteFooterHtml = new \Typecho\Widget\Helper\Form\Element\Textarea(
+    $siteFooterHtml = new Textarea(
         'siteFooterHtml',
         null,
         null,
@@ -174,6 +175,15 @@ function themeConfig($form)
         _t('所有分类：'.xaGetCategoryies())
     );
     $form->addInput($categoryListStyle);
+
+    $categoryIconSvg = new Textarea(
+        'categoryIconSvg',
+        null,
+        null,
+        _t('分类对应图标SVG，每行一个，id|svg，svg的宽高设置为16'),
+        _t('所有分类：'.xaGetCategoryies())
+    );
+    $form->addInput($categoryIconSvg);
 }
 
 /**
