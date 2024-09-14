@@ -8,14 +8,26 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <a href="<?php $this->options->siteUrl(); ?>" title="首页" class="xa-categories-title text-gray-500 hover:text-gray-700">首页</a>
         </li>
         <?php $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
-        <?php if ($categorys->have()): ?>
-            <?php while ($categorys->next()):
+        <?php if ($categorys->have()):
+            $idx = 1;
+            $maxNum = $this->options->authorInstagram ? intval($this->options->authorInstagram) : 6;
+            $mores = [];
+            while ($categorys->next()):
                 if($categorys->levels != 0) {
                     continue;
                 }
                 $childs = $categorys->getAllChildren($categorys->mid);
                 $svgicon = xaGetCategorySvg($categorys->mid);
-                ?>
+                if($idx >= $maxNum) {
+                    $mores[] = [
+                        'svg' =>$svgicon,
+                        'permalink' => $categorys->permalink,
+                        'name' => $categorys->name,
+                        'childs' => $childs
+                    ];
+                    continue;
+                }
+            ?>
                 <li class="relative flex items-center xa-categories-title <?php if(xaIsActiveCategory($this,$categorys->slug)): ?>xa-selected<?php endif; ?> ">
                     <?php if($svgicon != ''):?>
                     <i class="flex items-center"><?php echo $svgicon;?></i>
@@ -30,7 +42,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <!-- 这里增加了功能，列表目录不再显示子目录 -->
                     <?php if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
                     <!-- 子分类下拉框 -->
-                    <div class="xa-categories-sub xa-theme absolute top-full left-0 w-32 bg-white rounded-md shadow-md z-11 hidden">
+                    <div class="xa-categories-sub xa-theme absolute top-full left-0 w-32 bg-white rounded-md shadow-md z-50 hidden">
                         <?php
                             foreach ($childs as $childmid) {
                                 $child = $categorys->getCategory($childmid);
@@ -46,7 +58,23 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     </div>
                     <?php endif; ?>
                 </li>
-            <?php endwhile; ?>
+            <?php $idx++; endwhile; ?>
+            <?php if (count($mores) > 0): ?>
+            <li class="relative flex items-center xa-categories-title">
+                <a href="javascript:;" class="xa-categories-title text-gray-500 hover:text-gray-700">更多<svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-dots"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg></a>
+                <div class="xa-categories-sub xa-theme absolute top-full left-0 w-32 bg-white rounded-md shadow-md z-50 hidden">
+                    <?php
+                    foreach ($mores as $more) { ?>
+                        <div class="block flex items-center py-2 px-3">
+                            <?php if($more['svg'] != ''):?>
+                                <i class="flex items-center"><?php echo $more['svg'];?></i>
+                            <?php endif; ?>
+                            <a href="<?php echo $more['permalink']; ?>" class="rounded-full text-gray-500 hover:text-gray-700"><?php echo $more['name']; ?></a>
+                        </div>
+                    <?php } ?>
+                </div>
+            </li>
+            <?php endif; ?>
         <?php endif; ?>
     </ul>
 </div>

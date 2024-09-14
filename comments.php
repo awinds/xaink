@@ -116,9 +116,13 @@ function threadedComments($comments, $options)
     <?php endif; ?>
     <div class="xa-comment-list">
         <?php if ($comments->have()): ?>
-        <?php $comments->listComments(); ?>
+            <?php $comments->listComments(); ?>
+            <div class="flex justify-center items-center w-full py-12">没有更多啦</div>
+        <?php else: ?>
+            <?php if ($this->allow("comment")): ?>
+                <div class="flex justify-center items-center w-full py-12">等风等雨等你来</div>
+            <?php endif; ?>
         <?php endif; ?>
-        <div class="flex justify-center items-center w-full py-12">没有更多啦</div>
     </div>
 </div>
 <!-- 评论脚本 -->

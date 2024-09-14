@@ -115,6 +115,10 @@
     color: #f5f6f5;
 }
 
+.outline-navigator-parent .outline-navigator__main .outline-navigator_highlight {
+    color : rgb(59,130,246);
+}
+
 svg {
     display: inline-block;
 }

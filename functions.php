@@ -167,14 +167,14 @@ function themeConfig($form)
     );
     $form->addInput($siteFooterHtml);
 
-    $categoryListStyle = new Text(
-        'categoryListStyle',
+    $menuCategoryNum = new Text(
+        'menuCategoryNum',
         null,
-        null,
-        _t('有子目录则显示子目录的列表，没子目录则显示文章的标题列表，列表ID(多个用半角,分隔)：1,2'),
-        _t('所有分类：'.xaGetCategoryies())
+        6,
+        _t('目录显示的分类数(包括首页)，超过使用更多下拉，更多只显示一级分类'),
+        _t('太多的分类显示不好看，默认6个')
     );
-    $form->addInput($categoryListStyle);
+    $form->addInput($menuCategoryNum);
 
     $categoryIconSvg = new Textarea(
         'categoryIconSvg',
@@ -184,6 +184,15 @@ function themeConfig($form)
         _t('所有分类：'.xaGetCategoryies())
     );
     $form->addInput($categoryIconSvg);
+
+    $categoryListStyle = new Text(
+        'categoryListStyle',
+        null,
+        null,
+        _t('有子目录则显示子目录的列表，没子目录则显示文章的标题列表，列表ID(多个用半角,分隔)：1,2'),
+        _t('一般用于小说目录页，所有分类：'.xaGetCategoryies())
+    );
+    $form->addInput($categoryListStyle);
 }
 
 /**

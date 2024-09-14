@@ -53,9 +53,9 @@
     <link href="<?php $this->options->themeUrl("assets/css/tailwind.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/tabler-icons.min.css"); ?>" rel="stylesheet"/>
     <link href="<?php $this->options->themeUrl("assets/js/OwO/OwO.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
+    <link href="<?php $this->options->themeUrl("assets/css/outline.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/xa-ink.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/xa-ink-post.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
-    <link href="<?php $this->options->themeUrl("assets/css/outline.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/jquery.min.js?v=" . xaGetVersion()); ?>"></script>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/jquery.lazyload.min.js?v=" . xaGetVersion()); ?>"></script>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/jquery.sticky-sidebar.min.js?v=" . xaGetVersion()); ?>"></script>
