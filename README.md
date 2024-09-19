@@ -25,7 +25,7 @@ Demo:[https://www.xa.ink][2]
  - Sitemap插件，可生成网站地图
  - Stat插件，可显示文章浏览人数
  - CodeHighlighter插件，可高亮代码
- - Sticky插件，可置顶文章，需做以下修改配合 
+ - Sticky插件，可置顶文章，需做以下修改配合（使用plugins下面带的插件已修改）。 
 > ```php
 > //增加字段,外面可以自定义判断
 > $sticky_post['istop'] = 1;
@@ -41,13 +41,16 @@ Demo:[https://www.xa.ink][2]
  - 使用[JQuery](https://jquery.com/)和相关插件 
  - 使用[jr-qrcode](https://github.com/diamont1001/jrQrcode)生成二维码 
  - 使用[OwO](https://github.com/DIYgod/OwO)表情 
- - 使用[tabler](https://tabler.io)图标
+ - 使用[tabler](https://tabler.io/icons)图标
  
 # License 
 Open sourced under the MIT license. 
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.4.9
+ 1. 增加友链的页面插件下载地址。
+ 2. 打包配套插件到github，目录plugins，可选择使用。
 ## 1.4.8
  1. 分类目录显示控制数量，增加更多下拉显示一级目录。
  2. 控制台->外观->设置外观->目录显示的分类数。

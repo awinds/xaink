@@ -32,7 +32,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 ?>
             </div>
             <?php else: ?>
-            <div>Links 插件未启用，若要使用友情链接功能，请先安装并启用。</div>
+            <div>Links 插件未启用，若要使用友情链接功能，请先<a href="https://github.com/awinds/xaink/raw/refs/heads/main/plugins/Links.zip" target="_blank" rel="external nofollow">下载</a>安装并启用。</div>
             <?php endif; ?>
             <!--分隔线-->
             <div class="xa-space-line"></div>
