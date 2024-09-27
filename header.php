@@ -47,8 +47,7 @@
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?><?php if($this->_currentPage>1) echo ' - 第 '.$this->_currentPage.' 页 '; ?></title>
-    <link rel="shoucut icon" href="<?php $this->options->siteUrl . "favicon.ico" ?>">
-    <?php $this->header("description=&generator=&pingback=&template=&xmlrpc=&wlw=&commentReply=&keywords="); ?>
+    <link rel="shoucut icon" href="<?php echo($this->options->siteUrl . "favicon.ico"); ?>">
 <!--    <link rel="preload" href="--><?php //$this->options->themeUrl("assets/css/fonts/tabler-icons.woff2") ?><!--" as="font" type="font/woff2" crossorigin />-->
     <link href="<?php $this->options->themeUrl("assets/css/tailwind.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/tabler-icons.min.css"); ?>" rel="stylesheet"/>
@@ -56,6 +55,7 @@
     <link href="<?php $this->options->themeUrl("assets/css/outline.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/xa-ink.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/xa-ink-post.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
+    <?php $this->header("description=&generator=&pingback=&template=&xmlrpc=&wlw=&commentReply=&keywords="); ?>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/jquery.min.js?v=" . xaGetVersion()); ?>"></script>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/jquery.lazyload.min.js?v=" . xaGetVersion()); ?>"></script>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/jquery.sticky-sidebar.min.js?v=" . xaGetVersion()); ?>"></script>
@@ -64,7 +64,6 @@
         var siteUrl = '<?php $this->options->siteUrl() ?>';
     </script>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/xa-ink.js?v=" . xaGetVersion()); ?>"></script>
-
 </head>
 <body>
 <!-- 头部导航栏 -->

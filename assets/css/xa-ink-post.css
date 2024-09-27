@@ -720,8 +720,9 @@
 .xa-post-content pre > code {
     padding: 0;
     margin: 0;
-    word-break: normal;
-    white-space: pre;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     background: transparent;
     border: 0;
 }
@@ -753,7 +754,8 @@
     margin: 0;
     overflow: visible;
     line-height: inherit;
-    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
     background-color: transparent;
     border: 0;
 }
@@ -1021,7 +1023,7 @@
     color-scheme: dark;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    margin: 0;
+    margin: 12px 0;
     color: #c9d1d9;
     background-color: #0d1117;
     font-size: 16px;
@@ -1729,8 +1731,9 @@
 .dark .xa-post-content pre > code {
     padding: 0;
     margin: 0;
-    word-break: normal;
-    white-space: pre;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     background: transparent;
     border: 0;
 }
