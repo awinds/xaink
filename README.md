@@ -3,7 +3,11 @@
 
 Github:[https://github.com/awinds/xaink][1] 
 
+说明：[https://xiaoa.me/archives/theme_xaink.html][5] 
+
 Demo:[https://www.xa.ink][2] 
+
+作者blog:[https://xiaoa.me][6] 
 
 ![主题界面][3]
 
@@ -25,7 +29,7 @@ Demo:[https://www.xa.ink][2]
  - Sitemap插件，可生成网站地图
  - Stat插件，可显示文章浏览人数
  - CodeHighlighter插件，可高亮代码
- - Sticky插件，可置顶文章，需做以下修改配合（使用plugins下面带的插件已修改）。 
+ - Sticky插件，可置顶文章，需做以下修改配合（使用plugins下面带的插件已修改） 
 > ```php
 > //增加字段,外面可以自定义判断
 > $sticky_post['istop'] = 1;
@@ -48,6 +52,10 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.5.0
+ 1. 修改代码过长没自动换行的问题。
+ 2. 如果使用高亮插件，要解决换行问题，要改插件中样式`pre[class*="language-"]`中`white-space`值为`pre-wrap`。
+ 3. 修正暗样式问题。
 ## 1.4.9
  1. 增加友链的页面插件下载地址。
  2. 打包配套插件到github，目录plugins，可选择使用。
@@ -103,3 +111,5 @@ Open sourced under the MIT license.
   [2]: https://www.xa.ink
   [3]: https://raw.githubusercontent.com/awinds/xaink/main/screenshot.png
   [4]: https://raw.githubusercontent.com/awinds/xaink/main/screenshot2.png
+  [5]: https://xiaoa.me/archives/theme_xaink.html
+  [6]: https://xiaoa.me
