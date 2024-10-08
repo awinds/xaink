@@ -48,7 +48,7 @@
 
 .xa-post-content a {
     background-color: transparent;
-    color: var(--link-hover-color);
+    color: var(--link-hover-color,#58a6ff);
     text-decoration: none;
 }
 
@@ -195,7 +195,8 @@
     border-spacing: 0;
     border-collapse: collapse;
     display: block;
-    width: max-content;
+    /*width: max-content;*/
+    width: auto;
     max-width: 100%;
     overflow: auto;
 }
@@ -1218,7 +1219,8 @@
     border-spacing: 0;
     border-collapse: collapse;
     display: block;
-    width: max-content;
+    /*width: max-content;*/
+    width: auto;
     max-width: 100%;
     overflow: auto;
 }

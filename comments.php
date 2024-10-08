@@ -127,6 +127,7 @@ function threadedComments($comments, $options)
 </div>
 <!-- 评论脚本 -->
 <script type="text/javascript">
+var lastCommentId = '';
 window.TypechoComment = {
     dom: function (id) {
         return document.getElementById(id)
@@ -137,6 +138,11 @@ window.TypechoComment = {
         }
         return el;
     }, reply: function (cid, coid) {
+        //先把之前的取消回复改成回复
+        if(lastCommentId != '') {
+            $('#reply-'+lastCommentId+' button a').eq(1).show();
+            $('#reply-'+lastCommentId+' button a').eq(0).hide();
+        }
         //console.log(cid);
         var comment = this.dom(cid), response = this.dom("<?php $this->respondId(); ?>"),
             input = this.dom("comment-parent"),
@@ -156,14 +162,14 @@ window.TypechoComment = {
 
         $('#reply-'+cid+' button a').eq(0).show();
         $('#reply-'+cid+' button a').eq(1).hide();
-
+        lastCommentId = cid;
         //this.dom("cancel-comment-reply-link").style.display = "";
         //this.dom("cancel-comment-reply-link").className += " xa-button px-4 py-1 bg-blue-500 text-white rounded-2xl hover:bg-blue-600 focus:outline-none";
         //this.dom("cancel-comment-reply-link").style.display = "";
 
         if (null != textarea && "text" == textarea.name) {
             textarea.focus();
-            console.log($('#reply-'+cid).attr("data-author"))
+            //console.log($('#reply-'+cid).attr("data-author"))
             textarea.placeholder = "回复" + $('#reply-'+cid).attr("data-author");
         }
         return false;
@@ -181,6 +187,7 @@ window.TypechoComment = {
         holder.parentNode.insertBefore(response, holder);
         textarea = response.getElementsByTagName("textarea")[0];
         textarea.placeholder = "发表神评妙论";
+        lastCommentId = '';
         return false;
     }, customCancelReply: function (cid) {
         $('#reply-'+cid+' button a').eq(0).hide();

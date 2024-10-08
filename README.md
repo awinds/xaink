@@ -52,6 +52,10 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.5.1
+ 1. 优化正文内容表格中图片过宽问题和超链接问题。
+ 2. 优化评论回复和取消回复点击问题。
+ 3. 优化版权链接换行问题。
 ## 1.5.0
  1. 修改代码过长没自动换行的问题。
  2. 如果使用高亮插件，要解决换行问题，要改插件中样式`pre[class*="language-"]`中`white-space`值为`pre-wrap`。
