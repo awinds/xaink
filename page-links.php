@@ -20,7 +20,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <?php if(xaPluginIsActivated("Links")): ?>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <?php
-                Links_Plugin::output('<a rel="external nofollow" href="{url}" target="_blank" title="{title}" class="xa-links-item flex items-center justify-center p-4 rounded shadow h-20">
+                Links_Plugin::output('<a rel="external {user}" href="{url}" target="_blank" title="{title}" class="xa-links-item flex items-center justify-center p-4 rounded shadow h-20">
                         <div class="w-12 h-12 mr-2">
                             <img data-original="{image}"  class="lazy min-w-fit min-h-fit rounded-full" />
                         </div>

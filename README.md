@@ -52,6 +52,9 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.5.2
+ 1. 修正page页面无法生成导读的问题。
+ 2. 友链的a标签rel=nofollow由插件控制。
 ## 1.5.1
  1. 优化正文内容表格中图片过宽问题和超链接问题。
  2. 优化评论回复和取消回复点击问题。

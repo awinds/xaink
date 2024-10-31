@@ -215,18 +215,21 @@
   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
   <path d="M9 6l6 6l-6 6" /></svg></span></h2>
         <ul class="mt-2 flex-col items-center">
-            <li class="line-clamp-2 pl-4 flex items-center">
+            <li class="line-clamp-2 pl-4 flex items-center space-x-1">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-playstation-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 21a9 9 0 0 0 9 -9a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9z" /><path d="M12 12m-4.5 0a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0" /></svg>
                 <a href="https://www.foreverblog.cn/go.html" target="_blank" title="穿梭虫洞-随机访问十年之约友链博客">虫洞</a>
             </li>
-            <li class="line-clamp-2 pl-4 flex items-center">
+            <li class="line-clamp-2 pl-4 flex items-center space-x-1">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-train"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 13c0 -3.87 -3.37 -7 -10 -7h-8" /><path d="M3 15h16a2 2 0 0 0 2 -2" /><path d="M3 6v5h17.5" /><path d="M3 10l0 4" /><path d="M8 11l0 -5" /><path d="M13 11l0 -4.5" /><path d="M3 19l18 0" /></svg>
                 <a href="https://www.travellings.cn/go.html" target="_blank" title="开往">开往</a>
             </li>
-            <li class="line-clamp-2 pl-4 flex items-center">
+			<li class="line-clamp-2 pl-4 flex items-center space-x-1">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-b"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 20v-16h6a4 4 0 0 1 0 8a4 4 0 0 1 0 8h-6" /><path d="M7 12l6 0" /></svg>
+                <a href="https://bokelu.suijiboke.gs/" target="_blank" title="随机博客">博客录</a>
+            </li>
+            <li class="line-clamp-2 pl-4 flex items-center space-x-1">
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-packages"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 16.5l-5 -3l5 -3l5 3v5.5l-5 3z" /><path d="M2 13.5v5.5l5 3" /><path d="M7 16.545l5 -3.03" /><path d="M17 16.5l-5 -3l5 -3l5 3v5.5l-5 3z" /><path d="M12 19l5 3" /><path d="M17 16.5l5 -3" /><path d="M12 13.5v-5.5l-5 -3l5 -3l5 3v5.5" /><path d="M7 5.03v5.455" /><path d="M12 8l5 -3" /></svg>
-                <a href="https://cloud.tencent.com/developer/column/99647" target="_blank" title="
-偷得浮生半日闲">开发者社区</a>
+                <a href="https://cloud.tencent.com/developer/column/99647" target="_blank" title="偷得浮生半日闲">开发者社区</a>
             </li>
         </ul>
     </section>

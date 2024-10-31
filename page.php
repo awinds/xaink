@@ -45,7 +45,7 @@ if (isset($_POST['action'])
         <div id="main-center" class="flex-1 mx-1 lg:mr-12 lg:ml-32" itemscope itemtype="https://schema.org/NewsArticle">
             <!-- 我的链接 -->
             <!-- <h2 class="py-4" itemprop="name headline"><?php $this->title(); ?></h2> -->
-            <div class="xa-theme xa-post-content" itemprop="articleBody">
+            <div class="xa-theme xa-post-content" id="xa-post-content" itemprop="articleBody">
                 <?php $this->content(); ?>
             </div>
             <!--分隔线-->
@@ -79,7 +79,6 @@ if (isset($_POST['action'])
                     $('.xa-like').attr('title',"取消");
                     $('#likeNum').addClass('xa-left-bar-text-exist');
                     $('#likeExist').val("1");
-                    console.log('add',data.message);
                 }
                 else if(func == 'reduce') {
                     $('#likeNum').text(parseInt(val) - 1);
@@ -87,7 +86,6 @@ if (isset($_POST['action'])
                     $('.xa-like').attr('title',"点赞");
                     $('#likeNum').removeClass('xa-left-bar-text-exist');
                     $('#likeExist').val("0");
-                    console.log('reduce',data.message);
                 }
             }
         }, "json");
