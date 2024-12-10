@@ -52,6 +52,12 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.6.0
+ 1. 增加头部`Open Graph`和`Twitter Card`。
+ 2. og和twitter Mate信息中，如果有缩略图，则使用缩略图作为image信息。
+## 1.5.3
+ 1. 优化文章版权显示效果。
+ 2. 增加统计代码配置项。
 ## 1.5.2
  1. 修正page页面无法生成导读的问题。
  2. 友链的a标签rel=nofollow由插件控制。

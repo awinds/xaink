@@ -1,12 +1,12 @@
 <?php
 /**
- * 仿百度响应式的 Typecho 主题，支持明暗模式。<br/>
- * Github：<a href="https://github.com/awinds/xaink" target="_blank" title="XaInk Github Repo">https://github.com/awinds/xaink</a>
+ * 仿百度响应式的 Typecho 主题<br/>
+ * <a href="https://github.com/awinds/xaink" target="_blank" title="XaInk Github Repo">Github</a>&nbsp;&nbsp;<a href="https://xiaoa.me/archives/theme_xaink.html" target="_blank">详细说明</a>
  *
  * @package XaInk
  * @author XiaoA
- * @version 1.5.2
- * @link https://www.xa.ink/
+ * @version 1.6.0
+ * @link https://xiaoa.me/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>

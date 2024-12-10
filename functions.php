@@ -193,6 +193,15 @@ function themeConfig($form)
         _t('一般用于小说目录页，所有分类：'.xaGetCategoryies())
     );
     $form->addInput($categoryListStyle);
+
+    $headerStatJs = new Textarea(
+        'headerStatJs',
+        null,
+        null,
+        _t('头部统计JS'),
+        _t('头部统计JS，不用带script标签')
+    );
+    $form->addInput($headerStatJs);
 }
 
 /**

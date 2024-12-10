@@ -6,19 +6,61 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:site_name" content="<?php $this->options->title(); ?>"/>
+    <?php
+        $mateImage = ($this->options->logoUrl) ? $this->options->logoUrl : $this->options->themeUrl."assets/images/logo.png";
+    ?>
     <?php if ($this->is("index")): ?>
         <meta property="og:type" content="blog"/>
         <meta property="og:url" content="<?php $this->options->siteUrl(); ?>"/>
         <meta property="og:title" content="<?php $this->options->title(); ?>"/>
         <meta property="og:author" content="<?php $this->author->name(); ?>"/>
+        <meta property="og:description" content="<?php $this->options->description(); ?>"/>
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="<?php $this->options->title(); ?>">
+        <meta name="twitter:title" content="<?php $this->options->title(); ?>">
+        <meta name="twitter:description" content="<?php $this->options->description(); ?>">
+        <meta property="og:image" content="<?php echo $mateImage; ?>"/>
+        <meta name="twitter:image" content="<?php echo $mateImage; ?>">
+
         <meta name="keywords" content="<?php $this->keywords(); ?>">
         <meta name="description" content="<?php $this->options->description(); ?>">
     <?php endif; ?>
     <?php if ($this->is("post") || $this->is("page") || $this->is("attachment")): ?>
-        <meta property="og:url" content="<?php $this->permalink(); ?>"/>
-        <meta property="og:title" content="<?php $this->title(); ?> - <?php $this->options->title(); ?>"/>
-        <meta property="og:author" content="<?php $this->author(); ?>"/>
         <meta property="og:type" content="article"/>
+        <meta property="og:url" content="<?php $this->permalink(); ?>"/>
+        <meta property="og:title" content="<?php $this->title(); ?>"/>
+        <meta property="og:author" content="<?php $this->author(); ?>"/>
+        <meta property="og:description" content="<?php
+        $d = $this->fields->description;
+        if (empty($d) || !$this->is("single")) {
+            if ($this->getDescription()) {
+                echo $this->getDescription();
+            }
+        } else {
+            echo $d;
+        }
+        ?>"/>
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="<?php $this->options->title(); ?>">
+        <meta name="twitter:title" content="<?php $this->title(); ?>">
+        <meta name="twitter:description" content="<?php
+        $d = $this->fields->description;
+        if (empty($d) || !$this->is("single")) {
+            if ($this->getDescription()) {
+                echo $this->getDescription();
+            }
+        } else {
+            echo $d;
+        }
+        ?>">
+        <?php
+        if ($this->is("post") || $this->is("page")) {
+            $mateImage = xaGetThumbnail($this->cid, $mateImage);
+        }
+        ?>
+        <meta property="og:image" content="<?php echo $mateImage; ?>"/>
+        <meta name="twitter:image" content="<?php echo $mateImage; ?>">
         <meta property="article:published_time" content="<?php $this->date("c"); ?>"/>
         <meta property="article:published_first" content="<?php $this->options->title(); ?>, <?php $this->permalink(); ?>"/>
         <meta name="keywords" content="<?php
@@ -64,6 +106,11 @@
         var siteUrl = '<?php $this->options->siteUrl() ?>';
     </script>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/xa-ink.js?v=" . xaGetVersion()); ?>"></script>
+    <?php if($this->options->headerStatJs): ?>
+    <script type="text/javascript">
+        <?php $this->options->headerStatJs(); ?>
+    </script>
+    <?php endif ?>
 </head>
 <body>
 <!-- 头部导航栏 -->
