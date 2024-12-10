@@ -64,6 +64,11 @@
         var siteUrl = '<?php $this->options->siteUrl() ?>';
     </script>
     <script type="text/javascript" src="<?php $this->options->themeUrl("assets/js/xa-ink.js?v=" . xaGetVersion()); ?>"></script>
+    <?php if($this->options->headerStatJs): ?>
+    <script type="text/javascript">
+        <?php $this->options->headerStatJs(); ?>
+    </script>
+    <?php endif ?>
 </head>
 <body>
 <!-- 头部导航栏 -->

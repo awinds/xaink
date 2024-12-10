@@ -52,6 +52,9 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.5.3
+ 1. 优化文章版权显示效果。
+ 2. 增加统计代码配置项。
 ## 1.5.2
  1. 修正page页面无法生成导读的问题。
  2. 友链的a标签rel=nofollow由插件控制。

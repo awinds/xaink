@@ -22,7 +22,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 <?php
                 Links_Plugin::output('<a rel="external {user}" href="{url}" target="_blank" title="{title}" class="xa-links-item flex items-center justify-center p-4 rounded shadow h-20">
                         <div class="w-12 h-12 mr-2">
-                            <img data-original="{image}"  class="lazy min-w-fit min-h-fit rounded-full" />
+                            <img data-original="{image}" class="lazy min-w-fit min-h-fit rounded-full" />
                         </div>
                         <div class="flex flex-1 flex-col justify-between">
                             <h4 class="font-bold text-base">{name}</h4>
