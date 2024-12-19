@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:site_name" content="<?php $this->options->title(); ?>"/>
     <?php
-        $mateImage = ($this->options->logoUrl) ? $this->options->logoUrl : $this->options->themeUrl."assets/images/logo.png";
+        $mateImage = ($this->options->faviconUrl) ? $this->options->faviconUrl : (($this->options->logoUrl) ? $this->options->logoUrl : $this->options->themeUrl."assets/images/logo.png");
     ?>
     <?php if ($this->is("index")): ?>
         <meta property="og:type" content="blog"/>
@@ -89,7 +89,9 @@
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?><?php if($this->_currentPage>1) echo ' - 第 '.$this->_currentPage.' 页 '; ?></title>
-    <link rel="shoucut icon" href="<?php echo($this->options->siteUrl . "favicon.ico"); ?>">
+    <?php if ($this->options->faviconUrl): ?>
+    <link rel="shoucut icon" href="<?php $this->options->faviconUrl(); ?>">
+    <?php endif; ?>
 <!--    <link rel="preload" href="--><?php //$this->options->themeUrl("assets/css/fonts/tabler-icons.woff2") ?><!--" as="font" type="font/woff2" crossorigin />-->
     <link href="<?php $this->options->themeUrl("assets/css/tailwind.min.css?v=" . xaGetVersion()); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl("assets/css/tabler-icons.min.css"); ?>" rel="stylesheet"/>

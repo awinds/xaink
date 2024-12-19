@@ -22,6 +22,16 @@ function themeConfig($form)
 
     $form->addInput($logoUrl);
 
+    $faviconUrl = new Text(
+        'faviconUrl',
+        null,
+        null,
+        _t('站点favicon图标地址'),
+        _t('站点favicon图标, 为空则不显示')
+    );
+
+    $form->addInput($faviconUrl);
+
     $authorAvatar = new Text(
         'authorAvatar',
         null,
