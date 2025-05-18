@@ -10,7 +10,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <?php $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
         <?php if ($categorys->have()):
             $idx = 1;
-            $maxNum = $this->options->authorInstagram ? intval($this->options->authorInstagram) : 6;
+            $maxNum = $this->options->menuCategoryNum ? intval($this->options->menuCategoryNum) : 6;
             $mores = [];
             while ($categorys->next()):
                 if($categorys->levels != 0) {

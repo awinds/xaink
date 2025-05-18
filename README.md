@@ -52,6 +52,8 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.6.1
+ 1. 修改配置目录数量的`bug`。
 ## 1.6.0
  1. 增加头部`Open Graph`和`Twitter Card`。
  2. og和twitter Mate信息中，如果有缩略图，则使用缩略图作为image信息。
