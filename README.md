@@ -52,6 +52,8 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.6.2
+ 1. 修改分类页面无法显示分页的`bug`。
 ## 1.6.1
  1. 修改配置目录数量的`bug`。
 ## 1.6.0

@@ -74,8 +74,7 @@
         <?php endif;?>
 </div>
 </main>
-<?php if($isListCategory || (isset($subCategorys) && count($subCategorys) == 0)): ?>
-<?php else: ?>
+<?php if( !$isListCategory ): ?>
 <?php $this->need('core/pager.php'); ?>
 <?php endif;?>
 <?php $this->need('footer.php'); ?>
