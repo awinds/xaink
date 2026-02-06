@@ -16,7 +16,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 if($categorys->levels != 0) {
                     continue;
                 }
-                $childs = $categorys->getAllChildren($categorys->mid);
+                $childs = xaGetCategoryChildren($categorys->mid);
                 $svgicon = xaGetCategorySvg($categorys->mid);
                 if($idx >= $maxNum) {
                     $mores[] = [
@@ -40,12 +40,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <?php endif; ?>
                     </a>
                     <!-- 这里增加了功能，列表目录不再显示子目录 -->
-                    <?php if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
+                    <?php 
+                    if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)): 
+                    ?>
                     <!-- 子分类下拉框 -->
                     <div class="xa-categories-sub xa-theme absolute top-full left-0 w-32 bg-white rounded-md shadow-md z-50 hidden">
                         <?php
-                            foreach ($childs as $childmid) {
-                                $child = $categorys->getCategory($childmid);
+                            foreach ($childs as $child) {
                                 $childsvgicon = xaGetCategorySvg($child['mid']);
                             ?>
                             <div class="block flex items-center py-2 px-3">
@@ -95,7 +96,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     if($categorys->levels != 0) {
                         continue;
                     }
-                    $childs = $categorys->getAllChildren($categorys->mid);
+                    $childs = xaGetCategoryChildren($categorys->mid);
                     $svgicon = xaGetCategorySvg($categorys->mid);
                     ?>
                     <a href="<?php $categorys->permalink(); ?>"><li class="px-4 py-2 rounded-md flex items-center">
@@ -106,8 +107,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         </li></a>
                     <?php if (isset($childs) && count($childs) > 0 && !xaIsListCategory($categorys->mid)): ?>
                             <?php
-                            foreach ($childs as $childmid) {
-                                $child = $categorys->getCategory($childmid);
+                            foreach ($childs as $child) {
                                 $childsvgicon = xaGetCategorySvg($child['mid']);
                                 ?>
                                 <a href="<?php echo $child['permalink']; ?>"><li class="px-8 py-2 rounded-md flex items-center">

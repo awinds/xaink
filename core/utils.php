@@ -3,6 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 use Typecho\Plugin;
 use Utils\Helper;
 use Widget\Options;
+use Typecho\Widget;
 /**
  * 获取主题版本号
  */
@@ -187,6 +188,43 @@ function xaGetChildCategory($mid)
 }
 
 /**
+ * 获取数组或对象中的值 1.3.0 新增兼容1.2.1
+ */
+function xaGetPageRowValue($data, $key, $default = '') {
+    if (is_array($data)) {
+        return isset($data[$key]) ? $data[$key] : $default;
+    } elseif (is_object($data)) {
+        return isset($data->$key) ? $data->$key : $default;
+    }
+    return $default;
+}
+
+/**
+ * 获取子分类（返回数组）1.3.0 新增
+ * @param $parentMid
+ */
+function xaGetCategoryChildren($parentMid) {
+    $children = [];
+    $all = Widget::widget('Widget\Metas\Category\Rows');
+    
+    if ($all) {
+        while ($all->next()) {
+            if ((int)$all->parent === (int)$parentMid) {
+                $children[] = [
+                    'mid'   => (int)$all->mid,
+                    'name'  => $all->name,
+                    'permalink'   => $all->permalink,
+                    'count' => (int)$all->count,
+                    'description' => $all->description
+                ];
+            }
+        }
+    }
+    
+    return $children;
+}
+
+/**
  * 获取文章自定义字段
  * @param $cid            文章id
  * @param $filedNames     字段名
@@ -289,33 +327,55 @@ function xaGetAllPostByCategory($mid) {
 }
 
 /**
- * 获取文章归档
- * @param $widget
- * @return array
+ * 按年份归档文章（兼容 Typecho 1.2 和 1.3）
+ * @return array 归档数据，结构: [年 => [时间戳 => 文章信息]]
  */
-function xaGetArchives($widget)
-{
-    $db = Typecho_Db::get();
-    $rows = $db->fetchAll(
-        $db
-            ->select()
-            ->from("table.contents")
-            ->order("table.contents.created", Typecho_Db::SORT_DESC)
-            ->where("table.contents.type = ?", "post")
-            ->where("table.contents.status = ?", "publish")
-    );
-
+function xaGetArchives() {
     $stat = [];
-    foreach ($rows as $row) {
-        $row = $widget->filter($row);
+    $total = Widget::widget('Widget\Stat')->publishedPostsNum;
+    $posts = Widget::widget('Widget\Contents\Post\Recent', [
+        'pageSize' => max(1, $total),
+        'limit'    => 0
+    ]);
+
+    while ($posts->next()) {
+        $categories = [];
+        // === 兼容处理：判断 categories 是数组还是对象 ===
+        if (is_array($posts->categories)) {
+            foreach ($posts->categories as $cat) {
+                $categories[] = [
+                    'mid'   => isset($cat['mid']) ? (int)$cat['mid'] : 0,
+                    'name'  => isset($cat['name']) ? $cat['name'] : '',
+                    'slug'  => isset($cat['slug']) ? $cat['slug'] : '',
+                    'permalink'   => isset($cat['permalink']) ? $cat['permalink'] : '#'
+                ];
+            }
+        } else {
+            while ($posts->categories->next()) {
+                $categories[] = [
+                    'mid'   => (int)$posts->categories->mid,
+                    'name'  => $posts->categories->name,
+                    'slug'  => $posts->categories->slug,
+                    'permalink'   => $posts->categories->permalink
+                ];
+            }
+            if (method_exists($posts->categories, 'reset')) {
+                $posts->categories->reset();
+            }
+        }
+
         $arr = [
-            "cid" => $row["cid"],
-            "title" => $row["title"],
-            "categorys" => $row["categories"],
-            "permalink" => $row["permalink"],
+            'cid'        => $posts->cid,
+            'title'      => $posts->title,
+            'categorys'  => $categories,
+            'permalink'  => $posts->permalink,
+            'created'    => $posts->created
         ];
-        $stat[date("Y", $row["created"])][$row["created"]] = $arr;
+
+        $year = date('Y', $posts->created);
+        $stat[$year][$posts->created] = $arr;
     }
+
     return $stat;
 }
 

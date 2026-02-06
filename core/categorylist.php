@@ -1,10 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <ul>
-    <?php $subCategorys = $this->widget('Widget_Metas_Category_List')->getAllChildren($this->pageRow['mid']);?>
-    <?php foreach ($subCategorys as $idx): ?>
-    <?php
-    $child = $this->widget('Widget_Metas_Category_List')->getCategory($idx);
-    ?>
+    <?php 
+    $mid = xaGetPageRowValue($this->pageRow,'mid',0);
+    $subCategorys = xaGetCategoryChildren($mid);?>
+    <?php foreach ($subCategorys as $child): ?>
     <li class="mb-8" itemscope itemtype="http://schema.org/BlogPosting">
         <h3 class="xa-title text-lg mb-2" itemprop="name headline">
             <a href="<?php echo $child['permalink']; ?>" title="<?php echo $child['name']; ?>"><?php echo $child['name']; ?></a>

@@ -17,11 +17,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div id="main-center" class="flex-1 mx-1 lg:mr-12 lg:ml-32">
             <!-- 时间线 -->
             <h1 class="py-4" itemprop="headline">时间线</h1>
-            <div class="py-2">按年份显示文章的时间线，点击年份可展开/关闭，默认展开本年</div>
+            <div class="py-2">按年份显示文章的时间线，点击年份可展开/关闭，默认展开本年文章</div>
             <div class="xa-theme xa-archive-year">
                 <?php
                 $curyear = date("Y", time());
-                $archives = xaGetArchives($this);
+                $archives = xaGetArchives();
                 foreach ($archives as $year => $posts) : ?>
                     <div class="relative py-2">
                         <div class="xa-theme xa-link-line"></div>

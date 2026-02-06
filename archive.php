@@ -14,40 +14,41 @@
                     <?php
                     if($this->is('category')){
                         $subCategorys = [];
-                        $isListCategory = xaIsListCategory($this->pageRow['mid']);
-                        if (!$isListCategory && $this->pageRow['parent'] > 0) {
-                            $isListCategory = xaIsListCategory($this->pageRow['parent']);
+                        $mid = xaGetPageRowValue($this->pageRow,'mid',0);
+                        $parent = xaGetPageRowValue($this->pageRow,'parent',0);
+                        $isListCategory = xaIsListCategory($mid);
+                        if (!$isListCategory && $parent > 0) {
+                            $isListCategory = xaIsListCategory($parent);
                         }
                         if($isListCategory) {
-                            $subCategorys = $this->widget('Widget_Metas_Category_List')->getAllChildren($this->pageRow['mid']);
+                            $subCategorys = xaGetCategoryChildren($mid);
                             if (isset($subCategorys) && count($subCategorys) > 0) {
-                                echo "分类<span class='mx-2 font-bold'>".$this->pageRow['name'] ." </span>子分类(".count($subCategorys).")";
+                                echo "分类<span class='mx-2 font-bold'>".$this->archiveTitle ." </span>子类(".count($subCategorys).")";
                             }
                             else {
-                                //var_dump($this->pageRow);
+                                $description = xaGetPageRowValue($this->pageRow,'description','');
                                 ?>
                             <div class="flex flex-col items-center justify-start">
-                                <div class="w-full mb-4"><h2><?php echo $this->pageRow['name']; ?></h2></div>
-                                <div class="w-full mb-4"><?php echo $this->pageRow['description']; ?></div>
-                                <div class="w-full mb-4">章节数：<?php echo $this->pageRow['count']; ?></div>
+                                <div class="w-full mb-4"><h2><?php echo $this->archiveTitle; ?></h2></div>
+                                <div class="w-full mb-4"><?php echo $description; ?></div>
+                                <div class="w-full mb-4">章节数：<?php echo $this->getTotal(); ?></div>
                             </div>
                     <?php
                             }
                         }
                         else {
-                            echo "分类<span class='mx-2 font-bold'>" . $this->pageRow['name'] . " </span>下共有文章" . $this->pageRow['count'] . "篇";
+                            echo "分类<span class='mx-2 font-bold'>" . $this->archiveTitle . " </span>下共有文章" . $this->getTotal() . "篇";
                         }
                     }
                     elseif($this->is('tag')) {
-                        echo "<span class='xa-theme xa-count-tip mr-2' title='标签'>". $this->pageRow['name'] ."</span>相关文章". $this->pageRow['count'] ."篇";
+                        echo "<span class='xa-theme xa-count-tip mr-2' title='标签'>". $this->archiveTitle ."</span>相关文章". $this->getTotal() ."篇";
                     }
                     elseif ($this->is('search')) {
-                        $count = xaGetSearchTotal($this->keywords);
-                        echo "为您找到相关文章".$count."篇";
+                        echo "搜索：<span class='mx-2 font-bold'>" . $this->archiveTitle . " </span>为您找到相关文章".$this->getTotal()."篇";
                     }
                     elseif($this->is('archive')) {
                         if($this->archiveType == 'date') {
-                            echo "归档:<span class='mx-2 font-bold'>".$this->archiveTitle ." </span>";
+                            echo "归档:<span class='mx-2 font-bold'>".$this->archiveTitle ." </span>  文章".$this->getTotal()."篇";
                         }
                     }
                     ?>

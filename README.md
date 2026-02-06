@@ -14,7 +14,7 @@ Demo:[https://www.xa.ink][2]
 ![主题界面][4]
 
 # 特点
- - typecho 1.2.1
+ - typecho 1.3
  - 仿百度。
  - 响应式设计，支持明亮和黑暗模式。
  - 文章列表支持缩略图（字定义`thumbnail`），右侧悬停。
@@ -52,6 +52,8 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.7.0
+ 1. 支持`Typecho v1.3`。
 ## 1.6.2
  1. 修改分类页面无法显示分页的`bug`。
 ## 1.6.1

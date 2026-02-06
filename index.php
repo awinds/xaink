@@ -1,11 +1,11 @@
 <?php
 /**
- * 仿百度响应式的 Typecho 主题<br/>
+ * 仿百度响应式的 Typecho 主题，支持1.3<br/>
  * <a href="https://github.com/awinds/xaink" target="_blank" title="XaInk Github Repo">Github</a>&nbsp;&nbsp;<a href="https://xiaoa.me/archives/theme_xaink.html" target="_blank">详细说明</a>
  *
  * @package XaInk
  * @author XiaoA
- * @version 1.6.2
+ * @version 1.7.0
  * @link https://xiaoa.me/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;

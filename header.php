@@ -135,7 +135,7 @@
                 <form method="post" action="<?php $this->options->siteUrl(); ?>"  class="xa-search flex items-center w-full dark:bg-gray-700">
                     <input type="text" name="s" placeholder="搜索一下，你就找到"
                            class="w-full border-l-2 border-t-2 border-b-2 border-gray-200 dark:border-gray-600 rounded-l-lg py-2 px-4 h-10 focus:outline-none focus:border-blue-500"
-                           value="<?php if($this->is('search')) echo $this->keywords; ?>" />
+                           value="<?php if($this->is('search')) echo $this->archiveTitle; ?>" />
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 h-10 outline-blue-500 rounded-r-lg hover:bg-blue-600 focus:outline-none">搜索一下</button>
                 </form>
             </div>
