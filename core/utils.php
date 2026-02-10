@@ -307,7 +307,20 @@ function xaGetHotPosts($limit = 10)
         ->where('table.contents.type = ?', 'post')
         ->limit($limit)
         ->order('table.contents.commentsNum', Typecho_Db::SORT_DESC);
-    $result = $db->fetchAll($select, array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'push'));
+    //1.3不再兼容
+    //$result = $db->fetchAll($select, array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'push'));
+    $rows = $db->fetchAll($select);
+    $result = [];
+    foreach ($rows as $row) {
+        $cid = $row['cid'];
+        $post = Helper::widgetById('Contents', $cid);
+        $result[] = [
+            'cid' => $cid,
+            'title' => $post->title,
+            'permalink' => $post->permalink
+        ];
+    }
+    
     return $result;
 }
 
