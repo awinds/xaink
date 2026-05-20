@@ -52,6 +52,8 @@ Open sourced under the MIT license.
 保留Theme by Xaink，谢谢！
 
 # 更新说明 
+## 1.7.2
+ 1. 优化发表日期的显示。
 ## 1.7.1
  1. 修改获取热门文章在 `v1.3` 上的bug。
 ## 1.7.0

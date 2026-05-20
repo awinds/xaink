@@ -262,34 +262,68 @@ function xaGetThumbnail($cid, $defaultThumbnail)
 }
 
 /**
- * 人性化日期
- * @param int $created 日期
- * @return string   xx 前
+ * Typecho 风格人性化时间
+ * 
+ * 显示效果：
+ * 刚刚
+ * 5分钟前
+ * 2小时前
+ * 昨天
+ * 前天
+ * 7天前
+ * 05-20
+ * 2025-05-20
+ *
+ * @param int $created 时间戳
+ * @return string
  */
 function xaGetCustomDate($created)
 {
+    // 如果后台设置了时间格式，则直接使用
     if (Helper::options()->timeFormat != "") {
         return date(Helper::options()->timeFormat, $created);
-    } else {
-        //计算时间差
-        $diff = time() - $created;
-        $d = floor($diff / 3600 / 24);
-        $Y = date("Y", $created);
-        //输出时间
-        if (date("Y-m-d", $created) == date("Y-m-d")) {
-            return "今天";
-        } elseif ($d <= 1) {
-            return "昨天";
-        } elseif ($d == 2) {
-            return "前天";
-        } elseif ($d <= 31) {
-            return $d . " 天前";
-        } elseif ($Y == date("Y")) {
-            return date("m-d", $created);
-        } else {
-            return date("Y-m-d", $created);
-        }
     }
+    $now = time();
+    $diff = $now - $created;
+    // 防止未来时间
+    if ($diff < 0) {
+        return date("Y-m-d H:i", $created);
+    }
+    // 刚刚
+    if ($diff < 60) {
+        return "刚刚";
+    }
+    // 分钟前
+    if ($diff < 3600) {
+        return floor($diff / 60) . "分钟前";
+    }
+    // 小时前
+    if ($diff < 86400) {
+        return floor($diff / 3600) . "小时前";
+    }
+    // ===== 自然日判断 =====
+    $today = strtotime(date('Y-m-d'));
+    $createdDay = strtotime(date('Y-m-d', $created));
+    // 相差天数
+    $days = intval(($today - $createdDay) / 86400);
+    // 昨天
+    if ($days == 1) {
+        return "昨天";
+    }
+    // 前天
+    if ($days == 2) {
+        return "前天";
+    }
+    // 30天内
+    if ($days <= 30) {
+        return $days . "天前";
+    }
+    // 同年
+    if (date("Y", $created) == date("Y")) {
+        return date("m-d", $created);
+    }
+    // 不同年
+    return date("Y-m-d", $created);
 }
 
 /**
